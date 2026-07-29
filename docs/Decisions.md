@@ -145,3 +145,8 @@ A graphical logo may be introduced later only if it meaningfully strengthens the
 ### Status
 
 Accepted
+DD-009 — Content Can Lead Somewhere
+
+Informational items may optionally link to deeper content.
+
+Navigation should emerge naturally from the content rather than relying solely on menus.
