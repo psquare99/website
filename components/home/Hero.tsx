@@ -1,5 +1,5 @@
 import Container from "@/components/layout/Container";
-import CurrentItem from "@/components/ui/CurrentItem";
+import Thread from "@/components/ui/Thread";
 import { site } from "@/lib/site";
 
 export default function Hero() {
@@ -30,13 +30,13 @@ export default function Hero() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-8 lg:col-span-2 lg:pt-16">
-            {Object.values(site.current).map((item) => (
-              <CurrentItem
-  key={item.title}
+          <div className="space-y-6 lg:col-span-2 lg:pt-16">
+            {Object.values(site.threads).map((item) => (
+              <Thread
+  key={item.value}
   icon={item.icon}
-  title={item.title}
-  current={item.current}
+  label={item.label}
+  value={item.value}
   href={item.href}
 />
             ))}

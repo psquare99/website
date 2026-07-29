@@ -150,3 +150,17 @@ DD-009 — Content Can Lead Somewhere
 Informational items may optionally link to deeper content.
 
 Navigation should emerge naturally from the content rather than relying solely on menus.
+
+Navigation is defined by content, not components.
+
+Any piece of content may optionally expose a destination through href. Components should render links only when content declares one.
+## DD-010 — Thread-Based Navigation
+
+The homepage is composed of threads rather than status items.
+
+Each thread represents a meaningful aspect of life and may optionally lead to deeper content.
+
+Visitors explore the website by following whichever thread interests them.
+
+Content defines navigation.
+Navigation does not define content.

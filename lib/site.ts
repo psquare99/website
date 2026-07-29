@@ -1,32 +1,36 @@
 export const site = {
-  current: {
+  threads: {
     location: {
       icon: "📍",
-      title: "Based in Dharchula, Uttarakhand",
+      label: "Based in",
+      value: "Dharchula, Uttarakhand",
+      href: "https://maps.google.com/?q=Dharchula,Uttarakhand",
     },
 
     prime: {
       icon: "💻",
-      title: "Building Prime",
+      label: "Building",
+      value: "Prime",
       href: "/projects/prime",
     },
 
     wayfarer: {
       icon: "🎮",
-      title: "Designing Wayfarer",
+      label: "Designing",
+      value: "Wayfarer",
       href: "/projects/wayfarer",
     },
 
     reading: {
       icon: "📖",
-      title: "Reading",
-      current: "Sapiens: A Brief History of Humankind",
+      label: "Reading",
+      value: "Sapiens: A Brief History of Humankind",
       href: "/journal/sapiens-review",
     },
 
     coffee: {
       icon: "☕",
-      title: "Probably making another cup of coffee",
+      value: "Probably making another cup of coffee.",
     },
   },
 };
