@@ -1,3 +1,15 @@
+import Container from "@/components/Container";
+
+import Reflection from "@/components/Reflection";
+import HomeHero from "@/components/HomeHero";
+import { reflection } from "@/content/home/reflection";
+
 export default function HomePage() {
-  return <main>Hello, P².</main>;
+  return (
+    <Container>
+  <main className="py-20">
+    <HomeHero />
+  </main>
+</Container>
+  );
 }

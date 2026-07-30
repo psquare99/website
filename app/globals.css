@@ -4,12 +4,27 @@
   color-scheme: light;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
+
+  min-height: 100vh;
+
+  background: white;
+  color: #171717;
+
+  font-family: var(--font-geist-sans);
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
 }
