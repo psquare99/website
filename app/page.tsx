@@ -1,5 +1,15 @@
-import Hero from "@/components/home/Hero";
+import Container from "@/components/Container";
 
-export default function Home() {
-  return <Hero />;
+import Reflection from "@/components/Reflection";
+import HomeHero from "@/components/HomeHero";
+import { reflection } from "@/content/home/reflection";
+
+export default function HomePage() {
+  return (
+    <Container>
+  <main className="py-20">
+    <HomeHero />
+  </main>
+</Container>
+  );
 }
