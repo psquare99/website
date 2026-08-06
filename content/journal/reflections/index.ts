@@ -1,5 +1,5 @@
-import { whyJournalExists } from "./why-journal-exists";
+  import { whyJournalExists } from "./why-journal-exists";
 
-export const reflections = [
-  whyJournalExists,
-];
+  export const reflections = [
+    whyJournalExists,
+  ];

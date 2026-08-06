@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 import { journal } from "@/content/journal";
+import { formatDate } from "@/lib/formatDate";
 
 interface JournalPageProps {
   params: Promise<{
@@ -22,7 +24,7 @@ export default async function JournalPage({
 
   return (
     <main className="min-h-screen bg-[#F2EEE7]">
-      <article className="mx-auto max-w-3xl px-6 py-24">
+      <article className="mx-auto max-w-4xl px-6 py-24">
 
         <Link
           href="/journal"
@@ -33,29 +35,35 @@ export default async function JournalPage({
 
         <header className="mt-12">
 
-          <p className="text-sm uppercase tracking-[0.2em] text-[#8A7D6F]">
-            {entry.published}
-          </p>
+          <div className="flex flex-wrap items-center gap-3 text-sm uppercase tracking-[0.18em] text-[#8A7D6F]">
+            <span>{formatDate(entry.published)}</span>
 
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-[#2C2A28]">
+            <span>•</span>
+
+            <span className="capitalize">
+              {entry.category}
+            </span>
+
+            <span>•</span>
+
+            <span>{entry.readingTime}</span>
+          </div>
+
+          <h1 className="mt-6 text-5xl font-semibold tracking-tight text-[#2C2A28]">
             {entry.title}
           </h1>
-
-          {entry.readingTime && (
-            <p className="mt-4 text-[#8A7D6F]">
-              {entry.readingTime} read
-            </p>
-          )}
 
         </header>
 
         {entry.image && (
           <div className="mt-16 overflow-hidden rounded-3xl">
-            {/* We'll improve this later */}
-            <img
+            <Image
               src={entry.image.src}
               alt={entry.image.alt}
-              className="w-full"
+              width={1600}
+              height={900}
+              className="h-auto w-full object-cover"
+              priority
             />
           </div>
         )}
@@ -63,12 +71,12 @@ export default async function JournalPage({
         <section
           className="
             prose
+            prose-lg
             prose-neutral
             mt-16
             max-w-none
 
-            prose-p:text-[1.3rem]
-            prose-p:leading-10
+            prose-p:leading-9
             prose-p:text-[#4D463F]
 
             prose-headings:text-[#2C2A28]
@@ -82,14 +90,11 @@ export default async function JournalPage({
 
         <footer className="mt-24 border-t border-[#DDD2C3] pt-12">
 
-          <p className="text-[#8A7D6F]">
-            Written by
+          <p className="text-lg italic text-[#6A6258]">
+            Thanks for reading.
           </p>
 
-          <p className="mt-2 text-lg font-medium">
-            Prateek
-          </p>
-
+          
         </footer>
 
       </article>

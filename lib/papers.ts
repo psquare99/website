@@ -1,7 +1,7 @@
-import type { Paper } from "@/types/journal";
+import type { JournalPaper } from "@/types/journal";
 
 export const papers: Record<
-  Paper,
+  JournalPaper,
   {
     background: string;
     border: string;
@@ -31,4 +31,10 @@ export const papers: Record<
     background: "#F6F3EF",
     border: "#E1D9CF",
   },
+
+  white: {
+  background: "#FFFFFF",
+  border: "#E5E5E5",
+},
+
 };

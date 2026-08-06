@@ -1,0 +1,23 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+>
+  <style>
+    .p {
+      font: 700 280px Geist, Arial, sans-serif;
+      fill: #171717;
+    }
+
+    .sup {
+      font: 700 115px Geist, Arial, sans-serif;
+      fill: #7A9375;
+    }
+  </style>
+
+  <rect width="512" height="512" fill="#FAFAF8"/>
+
+  <text x="125" y="355" class="p">P</text>
+<text x="305" y="185" class="sup">2</text>
+</svg>

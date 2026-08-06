@@ -88,11 +88,13 @@ export const sapiens: JournalEntry = {
 
   published: "August 2026",
 
-  category: "Book",
+  category: "book",
 
   paper: "linen",
 
   readingTime: "6 min",
 
   content,
+
+  status: "published",
 };

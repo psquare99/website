@@ -66,11 +66,13 @@ export const waitButWhy: JournalEntry = {
 
   published: "August 2026",
 
-  category: "Website",
+  category: "website",
 
   paper: "mist",
 
   readingTime: "4 min",
 
   content,
+
+  status: "published",
 };

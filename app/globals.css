@@ -1,9 +1,27 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
 :root {
   color-scheme: light;
-}
 
+  /* Brand Colors */
+  --background: #fafaf8;
+  --foreground: #171717;
+  --muted: #737373;
+  --border: #e8e6e3;
+  --accent: #5e7c5a;
+  --accent-soft: #7a9375;
+}
+:root {
+  color-scheme: light;
+
+  --color-background: #fafaf8;
+  --color-foreground: #171717;
+  --color-accent: #5e7c5a;
+  --color-accent-soft: #7a9375;
+  --color-border: #e8e6e3;
+}
 *,
 *::before,
 *::after {
@@ -20,8 +38,8 @@ body {
 
   min-height: 100vh;
 
-  background: white;
-  color: #171717;
+ background: var(--color-background);
+color: var(--color-foreground);
 
   font-family: var(--font-geist-sans);
   line-height: 1.6;

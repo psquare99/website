@@ -5,13 +5,17 @@ export const preface: JournalEntry = {
 
   title: "A Quiet Corner of the Internet",
 
-  category: "Reflection",
+  category: "reflection",
 
   published: "August 2026",
 
-paper: "linen",
+paper: "cream",
   excerpt:
     "The internet already has enough content. I wanted to build a place that wasn't trying to compete for your attention.",
 
   content: "",
+
+  readingTime: "3 min",
+
+status: "published",
 };

@@ -27,11 +27,13 @@ export const twelveAngryMen: JournalEntry = {
 
   published: "Coming Soon",
 
-  category: "Movie",
+  category: "movie",
 
-  paper: "mist",
+  paper: "white",
 
   readingTime: "1 min",
 
   content,
+
+  status: "coming-soon",
 };

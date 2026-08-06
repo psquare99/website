@@ -1,18 +1,27 @@
 import { ReactNode } from "react";
 
-export type Paper =
+export type JournalCategory =
+  | "reflection"
+  | "book"
+  | "movie"
+  | "travel"
+  | "website"
+  | "project";
+
+export type JournalStatus =
+  | "published"
+  | "draft"
+  | "coming-soon";
+
+export type JournalPaper =
   | "cream"
-  | "sage"
+  | "white"
+  | "linen"
   | "mist"
-  | "peach"
-  | "linen";
+  | "sage"
+  | "peach";
 
-export interface JournalImage {
-  src: string;
-  alt: string;
-}
-
-export interface JournalEntry {
+export type JournalEntry = {
   slug: string;
 
   title: string;
@@ -23,11 +32,20 @@ export interface JournalEntry {
 
   published: string;
 
-  paper: Paper;
+  readingTime: string;
 
-  image?: JournalImage;
+  category: JournalCategory;
 
-  category?: string;
+  paper: JournalPaper;
 
-  readingTime?: string;
-}
+  image?: {
+  src: string;
+  alt: string;
+};
+
+  featured?: boolean;
+
+  location?: string;
+
+  status: JournalStatus;
+};

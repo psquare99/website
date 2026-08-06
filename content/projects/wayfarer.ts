@@ -16,7 +16,7 @@ export const wayfarer: Project = {
   logo: "/images/projects/wayfarer/logo.png",
 
   primaryImage:
-    "/images/projects/wayfarer/primary.png",
+    "/images/projects/wayfarer/primary.jpg",
 
   secondaryImage:
     "/images/projects/wayfarer/secondary.png",

@@ -1,0 +1,21 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="140"
+height="140"
+viewBox="0 0 140 140"
+>
+  <style>
+    .p {
+      font: 700 72px Geist, Arial, sans-serif;
+      fill: #171717;
+    }
+
+    .sup {
+      font: 700 30px Geist, Arial, sans-serif;
+      fill: #7A9375;
+    }
+  </style>
+
+  <text x="15" y="92" class="p">P</text>
+  <text x="58" y="48" class="sup">2</text>
+</svg>

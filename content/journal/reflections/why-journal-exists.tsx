@@ -33,9 +33,22 @@ export const whyJournalExists: JournalEntry = {
 
   content,
 
-  published: "August 2026",
+  image: {
+  src: "/journal/why-this-journal-exists/cover.png",
+  alt: "Open notebook on a wooden desk",
+},
+
+  published: "2026-08-06",
 
   paper: "cream",
 
   readingTime: "2 min",
+
+  category: "reflection",
+
+featured: true,
+
+location: "Dharchula, Uttarakhand",
+
+status: "published",
 };

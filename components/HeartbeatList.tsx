@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import type { Heartbeat } from "@/types/heartbeat";
 
 interface HeartbeatListProps {
@@ -10,17 +12,31 @@ export default function HeartbeatList({
   return (
     <ul className="space-y-8">
       {items.map((item) => (
-        <li key={item.id} className="flex items-start gap-4">
+        <li
+          key={item.id}
+          className="flex items-start gap-4"
+        >
           <span className="text-2xl leading-none">
-  {item.icon}
-</span>
+            {item.icon}
+          </span>
 
           {item.href ? (
-            <a href={item.href}>{item.text}</a>
+            <Link
+              href={item.href}
+              className="
+                text-xl
+                transition-all
+                duration-200
+                hover:text-[#5E7C5A]
+                hover:translate-x-1
+              "
+            >
+              {item.text}
+            </Link>
           ) : (
             <span className="text-xl">
-  {item.text}
-</span>
+              {item.text}
+            </span>
           )}
         </li>
       ))}
