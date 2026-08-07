@@ -5,69 +5,78 @@ export const prime: Project = {
 
   title: "Prime",
 
-  tagline: "Personal net worth manager",
+  tagline: "Track. Grow. Prosper.",
 
   Category: "App",
 
-  status: "building",
+  status: "completed",
 
   accentColor: "#3B82F6",
 
   logo: "/images/projects/prime/logo.png",
 
-primaryImage:
-"/images/projects/prime/primary.png",
+  primaryImage:
+    "/images/projects/prime/primary.png",
 
-secondaryImage:
-"/images/projects/prime/secondary.png",
+  secondaryImage:
+    "/images/projects/prime/secondary.png",
 
-github:
-"https://github.com/psquare99/prime",
+  github:
+    "https://github.com/psquare99/Prime",
 
-gallery: "/projects/prime/gallery",
-
+  gallery:
+    "/projects/prime/gallery",
 
   overview:
-    "Prime is a privacy-first personal net worth manager built with Flutter. It helps track assets, liabilities and overall net worth without relying on cloud services.",
+    "Prime is a modern, privacy-first personal net worth manager built with Flutter. It helps you track assets, liabilities and net worth entirely on your device without relying on cloud services.",
 
   why:
-    "I wanted to create a personal finance app that prioritizes user privacy and doesn't rely on cloud services. I also wanted to learn Flutter and explore local persistence with Hive.",
-    
+    "Prime began as a learning project to explore Flutter, but quickly evolved into a polished personal finance app. The goal was simple: build a beautiful, offline-first experience focused on helping people understand what they own and what they owe.",
+
   techStack: [
     "Flutter",
-    "Hive",
+    "Hive CE",
     "Provider",
     "Material 3",
   ],
 
   features: [
-    "Track assets and liabilities",
-    "Automatic net worth calculation",
-    "Offline-first storage",
-    "Minimal and clean interface",
+    "Net Worth Dashboard",
+    "Asset Management",
+    "Liability Management",
+    "Financial Insights",
+    "Offline-first Storage",
+    "Profile Management",
+    "Privacy Focused",
   ],
 
   lessons: [
-    "Designed reusable Flutter components.",
-    "Learned local persistence with Hive.",
-    "Improved application architecture using repositories.",
+    "Designed reusable Flutter widgets and layouts.",
+    "Built a clean repository-based architecture.",
+    "Learned local persistence with Hive CE.",
+    "Improved state management using Provider.",
+    "Shipped and maintained a complete production-ready Flutter application.",
   ],
+
   platform: "Android",
 
-framework: "Flutter",
+  framework: "Flutter",
 
-started: "July 2026",
+  started: "July 2026",
 
-repository: "private",
+  repository: "public",
 
-version: "v0.8.0",
+  version: "v1.0.0",
 
-roadmap: [
-  "Goal-based savings",
-  "Charts & analytics",
-  "Data backup & restore",
-  "Desktop version",
-],
-summary:
-  "A privacy-first personal finance app that helps track assets, liabilities and net worth without relying on cloud services.",
+  roadmap: [
+    "Net Worth History",
+    "Charts & Trends",
+    "Goals & Milestones",
+    "Cloud Backup & Sync",
+    "Home Screen Widgets",
+    "Multi-Currency Support",
+  ],
+
+  summary:
+    "A modern, offline-first personal finance app for tracking assets, liabilities and net worth with complete privacy.",
 };

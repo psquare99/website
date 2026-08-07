@@ -8,6 +8,7 @@ export type ProjectCategory =
 export type ProjectStatus =
   | "building"
   | "completed"
+  
   | "archived";
 export interface Project {
   slug: string;

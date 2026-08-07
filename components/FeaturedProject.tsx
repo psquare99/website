@@ -47,7 +47,9 @@ export default function FeaturedProject({
           <p className="mt-3 text-2xl font-light text-neutral-600">
             {project.tagline}
           </p>
-
+<p className="mt-4 text-sm font-medium text-emerald-600">
+  Currently under active development
+</p>
           <p className="mt-8 max-w-xl text-lg leading-8 text-neutral-600">
             {project.overview}
           </p>
@@ -62,7 +64,7 @@ export default function FeaturedProject({
             className="group mt-10 inline-flex items-center gap-2 text-lg font-semibold transition-all"
           >
            <>
-  Read Story
+  Explore Project
 
   <span className="transition-transform duration-300 group-hover:translate-x-1">
     →

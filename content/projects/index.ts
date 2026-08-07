@@ -1,11 +1,11 @@
-import { prime } from "./prime";
-import { wayfarer } from "./wayfarer";
-import { statementAnalyzer } from "./statement-analyzer";
 import { adiKailash } from "./adi-kailash";
+import { prime } from "./prime";
+import { statementAnalyzer } from "./statement-analyzer";
+import { wayfarer } from "./wayfarer";
 
 export const projects = [
-  prime,
   adiKailash,
+  prime,
   statementAnalyzer,
   wayfarer,
 ];

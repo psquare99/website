@@ -5,8 +5,13 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/content/projects";
 
 export default function ProjectsPage() {
-  const featuredProject = projects[0];
-  const otherProjects = projects.slice(1);
+  const featuredProject = projects.find(
+  (project) => project.slug === "adi-kailash",
+)!;
+
+const otherProjects = projects.filter(
+  (project) => project.slug !== "adi-kailash",
+);
 
   return (
     <Container>

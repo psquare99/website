@@ -41,7 +41,7 @@ body {
  background: var(--color-background);
 color: var(--color-foreground);
 
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-serif);
   line-height: 1.6;
 
   -webkit-font-smoothing: antialiased;

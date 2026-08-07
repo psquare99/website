@@ -33,7 +33,19 @@ export default function ProjectCard({
           <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
             {project.title}
           </h2>
-
+<div className="mt-3">
+  <span
+    className={`rounded-full px-3 py-1 text-sm font-medium ${
+      project.status === "completed"
+        ? "bg-emerald-100 text-emerald-700"
+        : "bg-amber-100 text-amber-700"
+    }`}
+  >
+    {project.status === "completed"
+      ? `Completed • ${project.version}`
+      : "In Development"}
+  </span>
+</div>
           <p className="mt-4 text-xl text-neutral-600">
             {project.tagline}
           </p>
@@ -46,7 +58,9 @@ export default function ProjectCard({
             href={`/projects/${project.slug}`}
             className="mt-8 inline-flex items-center gap-2 font-semibold transition-all duration-200 hover:gap-3"
           >
-            Explore →
+           {project.status === "completed"
+  ? "View Project →"
+  : "Explore →"}
           </Link>
         </div>
 
