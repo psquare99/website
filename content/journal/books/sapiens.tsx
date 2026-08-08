@@ -22,7 +22,7 @@ const editorDocument = {
         },
         {
           "type": "text",
-          "text": ". I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÂÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world."
+          "text": ". I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÃÂÃÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world."
         }
       ]
     },
@@ -52,7 +52,7 @@ const editorDocument = {
       "content": [
         {
           "type": "text",
-          "text": "Harari has this incredible ability to take things we almost never stop to question ÂÂmoney, religion, nations, even human rights ÂÂand ask, \"What if these only exist because we all collectively believe they do?\" This is the idea that most intrigued me."
+          "text": "Harari has this incredible ability to take things we almost never stop to question money, religion, nations, even human rights and ask, \"What if these only exist because we all collectively believe they do?\" This is the idea that most intrigued me."
         }
       ]
     },
@@ -167,10 +167,10 @@ const editorDocument = {
 const content = (
   <>
     <p>
-      Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up <em>Sapiens</em>. I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÂÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world.
+      Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up <em>Sapiens</em>. I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÃÂÃÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world.
     </p>
 
-    <figure className="mx-auto my-10 max-w-xl">
+    <figure className="my-8 w-full sm:float-right sm:ml-8 sm:mb-6 sm:w-[42%] sm:max-w-md">
       <div className="overflow-hidden rounded-2xl">
         <Image
           src="/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg"
@@ -180,7 +180,7 @@ const content = (
           className="h-auto w-full object-cover"
         />
       </div>
-      <figcaption className="mt-2.5 font-sans text-sm text-neutral-500">
+      <figcaption className="mt-2.5 font-sans text-sm leading-5 text-neutral-500">
         My Copy of Sapiens
       </figcaption>
     </figure>
@@ -190,7 +190,7 @@ const content = (
     </p>
 
     <p>
-      Harari has this incredible ability to take things we almost never stop to question ÂÂmoney, religion, nations, even human rights ÂÂand ask, "What if these only exist because we all collectively believe they do?" This is the idea that most intrigued me.
+      Harari has this incredible ability to take things we almost never stop to question money, religion, nations, even human rights and ask, "What if these only exist because we all collectively believe they do?" This is the idea that most intrigued me.
     </p>
 
     <p>
@@ -201,7 +201,7 @@ const content = (
       For a book covering nearly seventy thousand years of history, it never felt like a textbook. It reads with the curiosity of someone trying to understand humanity rather than simply list historical events.
     </p>
 
-    <figure className="mx-auto my-10 max-w-xl">
+    <figure className="my-8 w-full sm:float-left sm:mr-8 sm:mb-6 sm:w-[42%] sm:max-w-md">
       <div className="overflow-hidden rounded-2xl">
         <Image
           src="/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg"
@@ -211,7 +211,7 @@ const content = (
           className="h-auto w-full object-cover"
         />
       </div>
-      <figcaption className="mt-2.5 font-sans text-sm text-neutral-500">
+      <figcaption className="mt-2.5 font-sans text-sm leading-5 text-neutral-500">
         Sapiens:A Brief  History of Humankind
       </figcaption>
     </figure>
@@ -220,7 +220,7 @@ const content = (
       The idea that stayed with me
     </p>
 
-    <blockquote>
+    <blockquote className="clear-both">
       Large groups of strangers can cooperate because they believe in the same stories.
     </blockquote>
 
@@ -228,7 +228,7 @@ const content = (
       Once that idea clicked, I couldn't stop seeing it everywhere. Money. Countries. Companies. Even fandoms. None of them are physical objects in the way a mountain or a river is. They're shared ideas powerful enough to organize millions of people.
     </p>
 
-    <h2>Would I recommend it?</h2>
+    <h2 className="clear-both">Would I recommend it?</h2>
 
     <p>
       Absolutely. Whether you're interested in history, psychology or simply enjoy books that challenge the way you think, <em>Sapiens</em> is worth reading.
