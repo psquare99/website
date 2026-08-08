@@ -3,6 +3,7 @@ import { test2 } from "./test2";
 import { serializertest } from "./serializertest";
 import { imagetest } from "./imagetest";
 import { imagelayouttest } from "./imagelayouttest";
+import { thelongwayhomemanifestov100 } from "./thelongwayhomemanifestov100";
 
 export const reflections = [
   publishertest,
@@ -13,4 +14,6 @@ export const reflections = [
   imagetest,
 
   imagelayouttest,
+
+  thelongwayhomemanifestov100,
 ];
