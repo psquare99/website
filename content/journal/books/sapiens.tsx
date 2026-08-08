@@ -22,27 +22,24 @@ const editorDocument = {
         },
         {
           "type": "text",
-          "text": ". I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book but I bought it on a whim, and it ended up quietly changing the way I look at the world."
+          "text": ". I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÂÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world."
         }
       ]
     },
     {
       "type": "image",
       "attrs": {
-        "src": "/images/journal/books/sapiens/my-copy.jpg",
-        "alt": "My copy of Sapiens",
+        "src": "/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg",
+        "alt": "My Copy of Sapiens",
         "title": null,
-        "width": 1200,
-        "height": 900,
+        "width": 3072,
+        "height": 4080,
         "pendingId": null,
-        "caption": ""
+        "caption": "My Copy of Sapiens"
       }
     },
     {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
+      "type": "paragraph",
       "content": [
         {
           "type": "text",
@@ -55,7 +52,7 @@ const editorDocument = {
       "content": [
         {
           "type": "text",
-          "text": "Harari has this incredible ability to take things we almost never stop to question money, religion, nations, even human rights and ask, \"What if these only exist because we all collectively believe they do?\" This is the idea that most intrigued me."
+          "text": "Harari has this incredible ability to take things we almost never stop to question ÂÂmoney, religion, nations, even human rights ÂÂand ask, \"What if these only exist because we all collectively believe they do?\" This is the idea that most intrigued me."
         }
       ]
     },
@@ -80,20 +77,17 @@ const editorDocument = {
     {
       "type": "image",
       "attrs": {
-        "src": "/images/journal/books/sapiens/favourite-page.jpg",
-        "alt": "A highlighted page from my copy of Sapiens",
+        "src": "/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg",
+        "alt": "Favorite page from Sapiens",
         "title": null,
-        "width": 1200,
-        "height": 900,
+        "width": 3072,
+        "height": 4080,
         "pendingId": null,
-        "caption": ""
+        "caption": "Sapiens:A Brief  History of Humankind"
       }
     },
     {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
+      "type": "paragraph",
       "content": [
         {
           "type": "text",
@@ -173,25 +167,30 @@ const editorDocument = {
 const content = (
   <>
     <p>
-      Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up <em>Sapiens</em>. I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book but I bought it on a whim, and it ended up quietly changing the way I look at the world.
+      Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up <em>Sapiens</em>. I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book ÂÂbut I bought it on a whim, and it ended up quietly changing the way I look at the world.
     </p>
 
-    <figure className="mx-auto my-12 max-w-2xl">
+    <figure className="mx-auto my-10 max-w-xl">
       <div className="overflow-hidden rounded-2xl">
         <Image
-          src="/images/journal/books/sapiens/my-copy.jpg"
-          alt="My copy of Sapiens"
-          width={1200}
-          height={900}
+          src="/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg"
+          alt="My Copy of Sapiens"
+          width={3072}
+          height={4080}
           className="h-auto w-full object-cover"
         />
       </div>
+      <figcaption className="mt-2.5 font-sans text-sm text-neutral-500">
+        My Copy of Sapiens
+      </figcaption>
     </figure>
 
-    <h2>What I loved about it</h2>
+    <p>
+      What I loved about it
+    </p>
 
     <p>
-      Harari has this incredible ability to take things we almost never stop to question money, religion, nations, even human rights and ask, "What if these only exist because we all collectively believe they do?" This is the idea that most intrigued me.
+      Harari has this incredible ability to take things we almost never stop to question ÂÂmoney, religion, nations, even human rights ÂÂand ask, "What if these only exist because we all collectively believe they do?" This is the idea that most intrigued me.
     </p>
 
     <p>
@@ -202,19 +201,24 @@ const content = (
       For a book covering nearly seventy thousand years of history, it never felt like a textbook. It reads with the curiosity of someone trying to understand humanity rather than simply list historical events.
     </p>
 
-    <figure className="mx-auto my-12 max-w-2xl">
+    <figure className="mx-auto my-10 max-w-xl">
       <div className="overflow-hidden rounded-2xl">
         <Image
-          src="/images/journal/books/sapiens/favourite-page.jpg"
-          alt="A highlighted page from my copy of Sapiens"
-          width={1200}
-          height={900}
+          src="/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg"
+          alt="Favorite page from Sapiens"
+          width={3072}
+          height={4080}
           className="h-auto w-full object-cover"
         />
       </div>
+      <figcaption className="mt-2.5 font-sans text-sm text-neutral-500">
+        Sapiens:A Brief  History of Humankind
+      </figcaption>
     </figure>
 
-    <h2>The idea that stayed with me</h2>
+    <p>
+      The idea that stayed with me
+    </p>
 
     <blockquote>
       Large groups of strangers can cooperate because they believe in the same stories.
