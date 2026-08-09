@@ -9,16 +9,25 @@ const editorDocument = {
       "content": [
         {
           "type": "text",
+          "text": "Edited from the Android App "
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
           "text": "Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up "
         },
         {
           "type": "text",
+          "text": "Sapiens",
           "marks": [
             {
               "type": "italic"
             }
-          ],
-          "text": "Sapiens"
+          ]
         },
         {
           "type": "text",
@@ -27,16 +36,21 @@ const editorDocument = {
       ]
     },
     {
+      "type": "paragraph"
+    },
+    {
       "type": "image",
       "attrs": {
         "src": "/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg",
-        "alt": "My Copy of Sapiens",
-        "title": null,
-        "width": 3072,
-        "height": 4080,
+        "alt": "",
+        "width": null,
+        "height": null,
         "pendingId": null,
-        "caption": "My Copy of Sapiens"
+        "caption": ""
       }
+    },
+    {
+      "type": "paragraph"
     },
     {
       "type": "paragraph",
@@ -75,16 +89,21 @@ const editorDocument = {
       ]
     },
     {
+      "type": "paragraph"
+    },
+    {
       "type": "image",
       "attrs": {
         "src": "/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg",
-        "alt": "Favorite page from Sapiens",
-        "title": null,
-        "width": 3072,
-        "height": 4080,
+        "alt": "",
+        "width": null,
+        "height": null,
         "pendingId": null,
-        "caption": "Sapiens:A Brief  History of Humankind"
+        "caption": ""
       }
+    },
+    {
+      "type": "paragraph"
     },
     {
       "type": "paragraph",
@@ -139,12 +158,12 @@ const editorDocument = {
         },
         {
           "type": "text",
+          "text": "Sapiens",
           "marks": [
             {
               "type": "italic"
             }
-          ],
-          "text": "Sapiens"
+          ]
         },
         {
           "type": "text",
@@ -167,23 +186,32 @@ const editorDocument = {
 const content = (
   <>
     <p>
+      Edited from the Android App 
+    </p>
+
+    <p>
       Okay, so I don't remember buying a ton of books from my local bookstore in Kanpur, but I 100% remember picking up <em>Sapiens</em>. I'm still not sure what caught my attention first the cover or the title casually claiming it could explain all of humanity in one book but I bought it on a whim, and it ended up quietly changing the way I look at the world.
+    </p>
+
+    <p>
+
     </p>
 
     <figure className="journal-image journal-image-right">
         <div className="overflow-hidden rounded-2xl">
           <Image
             src="/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg"
-            alt="My Copy of Sapiens"
-            width={3072}
-            height={4080}
+            alt=""
+            width={1200}
+            height={900}
             className="h-auto w-full object-cover"
           />
         </div>
-        <figcaption>
-          My Copy of Sapiens
-        </figcaption>
       </figure>
+
+    <p>
+
+    </p>
 
     <p>
       What I loved about it
@@ -201,20 +229,25 @@ const content = (
       For a book covering nearly seventy thousand years of history, it never felt like a textbook. It reads with the curiosity of someone trying to understand humanity rather than simply list historical events.
     </p>
 
+    <p>
+
+    </p>
+
     <figure className="journal-image journal-image-left">
         <div className="overflow-hidden rounded-2xl">
           <Image
             src="/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg"
-            alt="Favorite page from Sapiens"
-            width={3072}
-            height={4080}
+            alt=""
+            width={1200}
+            height={900}
             className="h-auto w-full object-cover"
           />
         </div>
-        <figcaption>
-          Sapiens:A Brief  History of Humankind
-        </figcaption>
       </figure>
+
+    <p>
+
+    </p>
 
     <p>
       The idea that stayed with me
@@ -247,13 +280,13 @@ export const sapiens: JournalEntry = {
 
   excerpt: "I picked up Sapiens on a whim from a bookstore in Kanpur. I finished it seeing money, nations and even companies in a completely different way.",
 
-  published: "August 2026",
+  published: "2026-08-09",
 
   category: "book",
 
   paper: "linen",
 
-  readingTime: "6 min",
+  readingTime: "2 min",
 
   content,
 
