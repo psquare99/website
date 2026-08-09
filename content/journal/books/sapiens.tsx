@@ -39,20 +39,6 @@ const editorDocument = {
       "type": "paragraph"
     },
     {
-      "type": "image",
-      "attrs": {
-        "src": "/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg",
-        "alt": "",
-        "width": null,
-        "height": null,
-        "pendingId": null,
-        "caption": ""
-      }
-    },
-    {
-      "type": "paragraph"
-    },
-    {
       "type": "paragraph",
       "content": [
         {
@@ -92,6 +78,9 @@ const editorDocument = {
       "type": "paragraph"
     },
     {
+      "type": "paragraph"
+    },
+    {
       "type": "image",
       "attrs": {
         "src": "/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg",
@@ -101,6 +90,9 @@ const editorDocument = {
         "pendingId": null,
         "caption": ""
       }
+    },
+    {
+      "type": "paragraph"
     },
     {
       "type": "paragraph"
@@ -197,22 +189,6 @@ const content = (
 
     </p>
 
-    <figure className="journal-image journal-image-right">
-        <div className="overflow-hidden rounded-2xl">
-          <Image
-            src="/images/journal/book/the-book-that-made-me-question-everything/my-copy.jpg"
-            alt=""
-            width={1200}
-            height={900}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-      </figure>
-
-    <p>
-
-    </p>
-
     <p>
       What I loved about it
     </p>
@@ -233,7 +209,11 @@ const content = (
 
     </p>
 
-    <figure className="journal-image journal-image-left">
+    <p>
+
+    </p>
+
+    <figure className="journal-image journal-image-right">
         <div className="overflow-hidden rounded-2xl">
           <Image
             src="/images/journal/book/the-book-that-made-me-question-everything/favourite-page.jpg"
@@ -244,6 +224,10 @@ const content = (
           />
         </div>
       </figure>
+
+    <p>
+
+    </p>
 
     <p>
 
