@@ -81,13 +81,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "1. One App. One Purpose."
+          "text": "<strong>1. One App. One Purpose.</strong>"
         }
       ]
     },
@@ -96,14 +93,7 @@ const editorDocument = {
       "content": [
         {
           "type": "text",
-          "text": "Every application exists for a clearly defined reason."
-        },
-        {
-          "type": "hardBreak"
-        },
-        {
-          "type": "text",
-          "text": "If a feature does not strengthen that purpose, it does not belong."
+          "text": "Every application exists for a clearly defined reason.<br />If a feature does not strengthen that purpose, it does not belong."
         }
       ]
     },
@@ -123,13 +113,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "2. Calm by Design."
+          "text": "<strong>2. Calm by Design.</strong>"
         }
       ]
     },
@@ -194,13 +181,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "3. Finish and Leave."
+          "text": "<strong>3. Finish and Leave.</strong>"
         }
       ]
     },
@@ -256,13 +240,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "4. Privacy Is the Default."
+          "text": "<strong>4. Privacy Is the Default.</strong>"
         }
       ]
     },
@@ -309,13 +290,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "5. Offline First."
+          "text": "<strong>5. Offline First.</strong>"
         }
       ]
     },
@@ -353,13 +331,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "6. Accounts Are Optional."
+          "text": "<strong>6. Accounts Are Optional.</strong>"
         }
       ]
     },
@@ -388,13 +363,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "7. Build for Decades."
+          "text": "<strong>7. Build for Decades.</strong>"
         }
       ]
     },
@@ -432,13 +404,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "8. Respect the User's Mind."
+          "text": "<strong>8. Respect the User's Mind.</strong>"
         }
       ]
     },
@@ -485,13 +454,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "9. Every App Stands Alone."
+          "text": "<strong>9. Every App Stands Alone.</strong>"
         }
       ]
     },
@@ -520,13 +486,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "10. Connected, Never Entangled."
+          "text": "<strong>10. Connected, Never Entangled.</strong>"
         }
       ]
     },
@@ -573,13 +536,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "11. Quality Before Quantity."
+          "text": "<strong>11. Quality Before Quantity.</strong>"
         }
       ]
     },
@@ -608,13 +568,10 @@ const editorDocument = {
           "type": "text",
           "marks": [
             {
-              "type": "bold"
-            },
-            {
               "type": "italic"
             }
           ],
-          "text": "12. Build Things I Need."
+          "text": "<strong>12. Build Things I Need.</strong>"
         }
       ]
     },
@@ -730,10 +687,6 @@ const editorDocument = {
       "content": [
         {
           "type": "text",
-          "text": "                                           "
-        },
-        {
-          "type": "text",
           "marks": [
             {
               "type": "bold"
@@ -751,7 +704,7 @@ const editorDocument = {
           "content": [
             {
               "type": "text",
-              "text": "                              Software that helps you get back to life."
+              "text": "Software that helps you get back to life."
             }
           ]
         }
@@ -783,11 +736,11 @@ const content = (
     <h2 className="clear-journal-float"><strong>My Principles</strong></h2>
 
     <p>
-      <em><strong>1. One App. One Purpose.</strong></em>
+      <em>{"<"}strong{">"}1. One App. One Purpose.{"<"}/strong{">"}</em>
     </p>
 
     <p>
-      Every application exists for a clearly defined reason.<br />If a feature does not strengthen that purpose, it does not belong.
+      Every application exists for a clearly defined reason.{"<"}br /{">"}If a feature does not strengthen that purpose, it does not belong.
     </p>
 
     <p>
@@ -795,7 +748,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>2. Calm by Design.</strong></em>
+      <em>{"<"}strong{">"}2. Calm by Design.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -823,7 +776,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>3. Finish and Leave.</strong></em>
+      <em>{"<"}strong{">"}3. Finish and Leave.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -847,7 +800,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>4. Privacy Is the Default.</strong></em>
+      <em>{"<"}strong{">"}4. Privacy Is the Default.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -867,7 +820,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>5. Offline First.</strong></em>
+      <em>{"<"}strong{">"}5. Offline First.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -883,7 +836,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>6. Accounts Are Optional.</strong></em>
+      <em>{"<"}strong{">"}6. Accounts Are Optional.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -895,7 +848,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>7. Build for Decades.</strong></em>
+      <em>{"<"}strong{">"}7. Build for Decades.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -911,7 +864,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>8. Respect the User's Mind.</strong></em>
+      <em>{"<"}strong{">"}8. Respect the User's Mind.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -931,7 +884,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>9. Every App Stands Alone.</strong></em>
+      <em>{"<"}strong{">"}9. Every App Stands Alone.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -943,7 +896,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>10. Connected, Never Entangled.</strong></em>
+      <em>{"<"}strong{">"}10. Connected, Never Entangled.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -963,7 +916,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>11. Quality Before Quantity.</strong></em>
+      <em>{"<"}strong{">"}11. Quality Before Quantity.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -975,7 +928,7 @@ const content = (
     </p>
 
     <p>
-      <em><strong>12. Build Things I Need.</strong></em>
+      <em>{"<"}strong{">"}12. Build Things I Need.{"<"}/strong{">"}</em>
     </p>
 
     <p>
@@ -1021,11 +974,11 @@ const content = (
     </p>
 
     <p>
-                                                 <strong>The Long Way Home</strong>
+      <strong>The Long Way Home</strong>
     </p>
 
     <blockquote className="clear-journal-float">
-                                    Software that helps you get back to life.
+      Software that helps you get back to life.
     </blockquote>
   </>
 );
@@ -1049,5 +1002,5 @@ export const themanifesto: JournalEntry = {
 
   content,
 
-  status: "draft",
+  status: "published",
 };
