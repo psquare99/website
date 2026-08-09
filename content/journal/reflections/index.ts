@@ -1,5 +1,1 @@
-import { testing } from "./testing";
-
-export const reflections = [
-  testing,
-];
+export const reflections = [];
