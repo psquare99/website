@@ -12,63 +12,54 @@ interface JournalCardProps {
 
 export default function JournalCard({
   entry,
-  variant = "compact",
 }: JournalCardProps) {
   const paper = papers[entry.paper];
 
   return (
     <Link
-  href={`/journal/${entry.slug}`}
-  className="block"
->
-  <article
-      className="group mb-6 break-inside-avoid overflow-hidden rounded-[28px] border transition-all duration-300 hover:-translate-y-1"
-      style={{
-        background: paper.background,
-        borderColor: paper.border,
-      }}
+      href={`/journal/${entry.slug}`}
+      className="group block"
     >
-      {entry.image && (
-        <div className="relative aspect-[16/10] w-full overflow-hidden">
-          <Image
-            src={entry.image.src}
-            alt={entry.image.alt}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      )}
+      <article
+        className="overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        style={{
+          background: paper.background,
+          borderColor: paper.border,
+        }}
+      >
+        {entry.image && (
+          <div className="relative aspect-[16/10] w-full overflow-hidden">
+            <Image
+              src={entry.image.src}
+              alt={entry.image.alt}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+        )}
 
-      <div className="p-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-[#8A7D6F]">
-          {formatDate(entry.published)}
-        </p>
+        <div className="p-7">
+          <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#8A7D6F]">
+            <span>{formatDate(entry.published)}</span>
+            <span>•</span>
+            <span>{entry.category}</span>
+            <span>•</span>
+            <span>{entry.readingTime}</span>
+          </div>
 
-       
-          <h2
-            className={`mt-4 font-semibold tracking-tight text-[#2C2A28] ${
-              variant === "featured" ? "text-4xl" : "text-2xl"
-            }`}
-          >
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[#2C2A28] transition-colors group-hover:text-[#5F564D]">
             {entry.title}
           </h2>
-        
 
-        <p className="mt-6 leading-8 text-[#5F564D]">
-          {entry.excerpt}
-        </p>
+          <p className="mt-5 leading-8 text-[#5F564D]">
+            {entry.excerpt}
+          </p>
 
-        <div className="mt-8 flex items-center justify-between">
-          <span className="text-sm text-[#8A7D6F]">
-            {entry.readingTime}
-          </span>
-
-          <span className="font-medium">
-  Continue →
-</span>
+          <div className="mt-7 text-sm text-[#8A7D6F]">
+            Read →
+          </div>
         </div>
-      </div>
       </article>
-</Link>
+    </Link>
   );
 }

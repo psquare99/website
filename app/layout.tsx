@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Source_Serif_4, Caveat } from "next/font/google";
 
 import "./globals.css";
@@ -112,14 +113,28 @@ export default function RootLayout({
       className={`${sourceSerif.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-0PK21H0NP4"
+    strategy="afterInteractive"
+  />
 
-        <main className="flex-1">
-          {children}
-        </main>
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0PK21H0NP4');
+    `}
+  </Script>
 
-        <Footer />
-      </body>
+  <Navbar />
+
+  <main className="flex-1">
+    {children}
+  </main>
+
+  <Footer />
+</body>
     </html>
   );
 }

@@ -1,13 +1,32 @@
-export function formatDate(date: string) {
-  const parsed = new Date(date);
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
-  if (Number.isNaN(parsed.getTime())) {
+export function formatDate(date: string) {
+  const match = date.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+  if (!match) {
     return date;
   }
 
-  return new Intl.DateTimeFormat("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(parsed);
+  const [, year, month, day] = match;
+
+  const monthIndex = Number(month) - 1;
+
+  if (monthIndex < 0 || monthIndex > 11) {
+    return date;
+  }
+
+  return `${Number(day)} ${months[monthIndex]} ${year}`;
 }
