@@ -1,12 +1,6 @@
 import { ReactNode } from "react";
 
-export type JournalCategory =
-  | "reflection"
-  | "book"
-  | "movie"
-  | "travel"
-  | "website"
-  | "project";
+export type JournalCategory = string;
 
 export type JournalStatus =
   | "published"

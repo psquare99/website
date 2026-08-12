@@ -1,5 +1,5 @@
 import { devLog1 } from "./devLog1";
 
-export const dev-logs = [
+export const devLogs = [
   devLog1,
 ];
