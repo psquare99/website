@@ -2,29 +2,65 @@
 
 import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
+
 import type { JournalEntry } from "@/types/journal";
+
 import JournalCard from "./JournalCard";
+
 import { journal } from "@/content/journal";
 
 const Masonry = dynamic(
-  () => import("masonic").then((mod) => mod.Masonry),
+  () =>
+    import("masonic").then(
+      (mod) => mod.Masonry
+    ),
   {
     ssr: false,
   }
 );
 
-const categories = [
-  { label: "All", value: "all" },
-  { label: "Reflections", value: "reflection" },
-  { label: "Books", value: "book" },
-  { label: "Travel", value: "travel" },
-  { label: "Movies", value: "movie" },
-  { label: "Tech", value: "project" },
-] as const;
+function formatCategoryLabel(
+  category: string
+): string {
+  return category
+    .split("-")
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
+}
 
 export default function Notebook() {
-  const [selectedCategory, setSelectedCategory] =
-    useState<(typeof categories)[number]["value"]>("all");
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(
+      new Set(
+        journal.map(
+          (entry) => entry.category
+        )
+      )
+    );
+
+    return [
+      {
+        label: "All",
+        value: "all",
+      },
+      ...uniqueCategories.map(
+        (category) => ({
+          label:
+            formatCategoryLabel(category),
+          value: category,
+        })
+      ),
+    ];
+  }, []);
+
+  const [
+    selectedCategory,
+    setSelectedCategory,
+  ] = useState("all");
 
   const filteredJournal = useMemo(() => {
     if (selectedCategory === "all") {
@@ -32,7 +68,9 @@ export default function Notebook() {
     }
 
     return journal.filter(
-      (entry) => entry.category === selectedCategory
+      (entry) =>
+        entry.category ===
+        selectedCategory
     );
   }, [selectedCategory]);
 
@@ -42,9 +80,14 @@ export default function Notebook() {
         {categories.map((category) => (
           <button
             key={category.value}
-            onClick={() => setSelectedCategory(category.value)}
+            onClick={() =>
+              setSelectedCategory(
+                category.value
+              )
+            }
             className={`border-b-2 pb-1 transition-colors ${
-              selectedCategory === category.value
+              selectedCategory ===
+              category.value
                 ? "border-[var(--color-accent)] text-black"
                 : "border-transparent text-neutral-500 hover:text-black"
             }`}
@@ -55,16 +98,16 @@ export default function Notebook() {
       </div>
 
       <Masonry
-  items={filteredJournal}
-  columnGutter={24}
-  rowGutter={24}
-  columnWidth={320}
-  render={({ data }) => (
-    <JournalCard
-      entry={data as JournalEntry}
-    />
-  )}
-/>
+        items={filteredJournal}
+        columnGutter={24}
+        rowGutter={24}
+        columnWidth={320}
+        render={({ data }) => (
+          <JournalCard
+            entry={data as JournalEntry}
+          />
+        )}
+      />
     </section>
   );
 }
