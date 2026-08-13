@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { journal } from "@/content/journal";
+import { getPublishedJournal } from "@/lib/publishing/published-journal";
 import { formatDate } from "@/lib/formatDate";
 
 import JournalContent from "@/components/JournalContent";
@@ -18,7 +19,16 @@ export default async function JournalPage({
 }: JournalPageProps) {
   const { slug } = await params;
 
-  const entry = journal.find((post) => post.slug === slug);
+  const publishedJournal = getPublishedJournal();
+
+  const allJournal = [
+    ...journal,
+    ...publishedJournal,
+  ];
+
+  const entry = allJournal.find(
+    (post) => post.slug === slug
+  );
 
   if (!entry) {
     notFound();
@@ -88,13 +98,13 @@ export default async function JournalPage({
           "
         >
           {entry.editorDocument ? (
-  <JournalContent document={entry.editorDocument} />
-) : (
-  entry.content
-)}
-          
+            <JournalContent
+              document={entry.editorDocument}
+            />
+          ) : (
+            entry.content
+          )}
         </section>
-        
 
         <footer className="mt-24 border-t border-[#DDD2C3] pt-12">
 
@@ -102,7 +112,6 @@ export default async function JournalPage({
             Thanks for reading.
           </p>
 
-          
         </footer>
 
       </article>

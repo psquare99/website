@@ -102,6 +102,10 @@ export function journalFromPublishedDocument(
     );
   }
 
+  const category =
+    document.metadata.category?.trim() ||
+    "uncategorized";
+
   return {
     slug: document.slug,
 
@@ -123,9 +127,7 @@ export function journalFromPublishedDocument(
         document.blocks
       ),
 
-    category:
-      document.metadata.category ??
-      "uncategorized",
+    category,
 
     status: "published",
 

@@ -1,27 +1,19 @@
 {
   "contractVersion": "0.1",
-  "id": "studio-test",
+  "id": "4b4ddffe-51a9-4fa9-870f-aad4b5d3771e",
   "contentType": "journal",
   "slug": "studio-test",
-  "publishedAt": "2026-08-13T00:00:00.000Z",
+  "publishedAt": "2026-08-13T08:21:51.554Z",
   "metadata": {
     "title": "Studio Test",
-    "excerpt": "Testing the new publishing workflow.",
-    "category": "dev-logs"
+    "excerpt": "I am publishing this test again"
   },
   "blocks": [
     {
-      "id": "paragraph-1",
+      "id": "b39a1608-5a76-45a8-967e-e45ef8c2178a",
       "type": "paragraph",
       "data": {
-        "text": "This journal entry was created in Studio."
-      }
-    },
-    {
-      "id": "paragraph-2",
-      "type": "paragraph",
-      "data": {
-        "text": "Studio knows what to publish. The website knows how to publish it."
+        "text": "The reason for publishing this test again is because, due to some technical problems i had to clear the browser data which led to the deletion of the stored old studio test.\nHowever this test also clears that we can't rely blindly on the local storage. cloud persistence is the need of the hour.\nPublished directly from the Studio Publish button. 🔥"
       }
     }
   ]

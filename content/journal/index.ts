@@ -7,8 +7,6 @@ import { travel } from "./travel";
 import { websites } from "./websites";
 import { devLogs } from "./dev-logs";
 
-import { publishedJournal } from "@/lib/publishing/published-journal";
-
 export const journal: JournalEntry[] = [
   ...reflections,
   ...books,
@@ -16,6 +14,4 @@ export const journal: JournalEntry[] = [
   ...travel,
   ...websites,
   ...devLogs,
-
-  ...publishedJournal,
 ];

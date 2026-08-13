@@ -4,10 +4,7 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 
 import type { JournalEntry } from "@/types/journal";
-
 import JournalCard from "./JournalCard";
-
-import { journal } from "@/content/journal";
 
 const Masonry = dynamic(
   () =>
@@ -19,9 +16,11 @@ const Masonry = dynamic(
   }
 );
 
-function formatCategoryLabel(
-  category: string
-): string {
+interface NotebookProps {
+  journal: JournalEntry[];
+}
+
+function categoryLabel(category: string) {
   return category
     .split("-")
     .map(
@@ -32,13 +31,15 @@ function formatCategoryLabel(
     .join(" ");
 }
 
-export default function Notebook() {
+export default function Notebook({
+  journal,
+}: NotebookProps) {
   const categories = useMemo(() => {
     const uniqueCategories = Array.from(
       new Set(
-        journal.map(
-          (entry) => entry.category
-        )
+        journal
+          .map((entry) => entry.category)
+          .filter(Boolean)
       )
     );
 
@@ -49,18 +50,15 @@ export default function Notebook() {
       },
       ...uniqueCategories.map(
         (category) => ({
-          label:
-            formatCategoryLabel(category),
+          label: categoryLabel(category),
           value: category,
         })
       ),
     ];
-  }, []);
+  }, [journal]);
 
-  const [
-    selectedCategory,
-    setSelectedCategory,
-  ] = useState("all");
+  const [selectedCategory, setSelectedCategory] =
+    useState("all");
 
   const filteredJournal = useMemo(() => {
     if (selectedCategory === "all") {
@@ -69,10 +67,9 @@ export default function Notebook() {
 
     return journal.filter(
       (entry) =>
-        entry.category ===
-        selectedCategory
+        entry.category === selectedCategory
     );
-  }, [selectedCategory]);
+  }, [selectedCategory, journal]);
 
   return (
     <section>
@@ -98,13 +95,17 @@ export default function Notebook() {
       </div>
 
       <Masonry
+        key={selectedCategory}
         items={filteredJournal}
+        
         columnGutter={24}
         rowGutter={24}
         columnWidth={320}
         render={({ data }) => (
           <JournalCard
-            entry={data as JournalEntry}
+            entry={
+              data as JournalEntry
+            }
           />
         )}
       />
