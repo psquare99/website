@@ -19,13 +19,13 @@ export const studioTestPublication: PublishedDocument = {
 
   blocks: [
     {
-      id: "paragraph-1",
-      type: "paragraph",
-      data: {
-        text:
-          "This journal entry was created in Studio and received by the website through Publishing Contract v0.1.",
-      },
-    },
+  id: "paragraph-1",
+  type: "paragraph",
+  data: {
+    text:
+      "This journal entry was created in Studio and received by the website through Publishing Contract v0.1.",
+  },
+},
     {
       id: "paragraph-2",
       type: "paragraph",

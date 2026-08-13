@@ -1,40 +1,42 @@
+import type { ReactNode } from "react";
+
 import type { JournalEntry } from "@/types/journal";
+
+export interface PublishedDocumentMetadata {
+  title: string;
+  excerpt?: string;
+  category?: string;
+  location?: string;
+  featured?: boolean;
+}
+
+export interface PublishedBlock {
+  id: string;
+  type: string;
+  data: unknown;
+}
 
 export interface PublishedDocument {
   contractVersion: "0.1";
 
   id: string;
 
-  contentType: string;
+  contentType: "journal";
 
   slug: string;
 
   publishedAt: string;
 
-  metadata: {
-    title: string;
-    excerpt?: string;
-    category?: string;
-    location?: string;
-    featured?: boolean;
-  };
+  metadata: PublishedDocumentMetadata;
 
   blocks: PublishedBlock[];
 }
 
-export interface PublishedBlock {
-  id: string;
-
-  type: string;
-
-  data: unknown;
-}
-
-function blocksToContent(
-  blocks: PublishedBlock[]
-): JournalEntry["content"] {
-  return blocks.map((block) => {
-    if (block.type === "paragraph") {
+function renderBlock(
+  block: PublishedBlock
+): ReactNode {
+  switch (block.type) {
+    case "paragraph": {
       const data = block.data as {
         text?: string;
       };
@@ -46,36 +48,46 @@ function blocksToContent(
       );
     }
 
-    return null;
-  });
+    default:
+      return null;
+  }
 }
 
-function calculateReadingTime(
+function renderBlocks(
+  blocks: PublishedBlock[]
+): ReactNode {
+  return blocks.map(renderBlock);
+}
+
+function estimateReadingTime(
   blocks: PublishedBlock[]
 ): string {
-  const text = blocks
-    .map((block) => {
+  const words = blocks.reduce(
+    (count, block) => {
       if (block.type !== "paragraph") {
-        return "";
+        return count;
       }
 
       const data = block.data as {
         text?: string;
       };
 
-      return data.text ?? "";
-    })
-    .join(" ");
-
-  const wordCount = text
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .length;
+      return (
+        count +
+        (data.text
+          ? data.text
+              .trim()
+              .split(/\s+/)
+              .filter(Boolean).length
+          : 0)
+      );
+    },
+    0
+  );
 
   const minutes = Math.max(
     1,
-    Math.ceil(wordCount / 200)
+    Math.ceil(words / 200)
   );
 
   return `${minutes} min`;
@@ -86,7 +98,7 @@ export function journalFromPublishedDocument(
 ): JournalEntry {
   if (document.contentType !== "journal") {
     throw new Error(
-      `Cannot create JournalEntry from content type "${document.contentType}".`
+      `Cannot adapt "${document.contentType}" as a journal.`
     );
   }
 
@@ -95,25 +107,34 @@ export function journalFromPublishedDocument(
 
     title: document.metadata.title,
 
-    excerpt: document.metadata.excerpt ?? "",
+    excerpt:
+      document.metadata.excerpt ?? "",
 
-    content: blocksToContent(document.blocks),
-
-    readingTime: calculateReadingTime(document.blocks),
-
-    category:
-      document.metadata.category ?? "uncategorized",
+    content: (
+      <div className="space-y-6">
+        {renderBlocks(document.blocks)}
+      </div>
+    ),
 
     published: document.publishedAt,
 
+    readingTime:
+      estimateReadingTime(
+        document.blocks
+      ),
+
+    category:
+      document.metadata.category ??
+      "uncategorized",
+
     status: "published",
 
-    location: document.metadata.location,
+    featured:
+      document.metadata.featured,
 
-    featured: document.metadata.featured,
+    location:
+      document.metadata.location,
 
-    // Website presentation decision.
-    // Studio does not control this.
-    paper: "linen",
+    paper: "cream",
   };
 }
