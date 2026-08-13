@@ -1,7 +1,8 @@
 import Image from "next/image";
 import type { JournalEntry } from "@/types/journal";
+import type { JournalDocument } from "@/types/journal-content";
 
-const editorDocument = {
+const editorDocument: JournalDocument = {
   "type": "doc",
   "content": [
     {
@@ -42,6 +43,7 @@ const editorDocument = {
     },
     {
       "type": "paragraph",
+      
       "content": [
         {
           "type": "text",
@@ -77,7 +79,7 @@ const content = (
 );
 
 export const devlog1: JournalEntry = {
-  slug: "dev log1",
+  slug: "dev-log-1",
 
   title: "Dev Logs #1: Fixed Journal Publisher Category Creation Bug",
 
@@ -94,4 +96,6 @@ export const devlog1: JournalEntry = {
   content,
 
   status: "published",
+
+  editorDocument,
 };

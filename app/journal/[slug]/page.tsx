@@ -5,6 +5,8 @@ import Image from "next/image";
 import { journal } from "@/content/journal";
 import { formatDate } from "@/lib/formatDate";
 
+import JournalContent from "@/components/JournalContent";
+
 interface JournalPageProps {
   params: Promise<{
     slug: string;
@@ -85,8 +87,14 @@ export default async function JournalPage({
             prose-blockquote:text-[#6A6258]
           "
         >
-          {entry.content}
+          {entry.editorDocument ? (
+  <JournalContent document={entry.editorDocument} />
+) : (
+  entry.content
+)}
+          
         </section>
+        
 
         <footer className="mt-24 border-t border-[#DDD2C3] pt-12">
 

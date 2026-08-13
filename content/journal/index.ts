@@ -5,6 +5,7 @@ import { books } from "./books";
 import { movies } from "./movies";
 import { travel } from "./travel";
 import { websites } from "./websites";
+import { devLogs } from "./dev-logs";
 
 export const journal: JournalEntry[] = [
   ...reflections,
@@ -12,4 +13,5 @@ export const journal: JournalEntry[] = [
   ...movies,
   ...travel,
   ...websites,
+  ...devLogs,
 ];
