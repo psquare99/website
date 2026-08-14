@@ -1,0 +1,54 @@
+{
+  "contractVersion": "0.1",
+  "id": "5680832c-8ded-43e4-81d8-ff30486b001e",
+  "contentType": "project",
+  "slug": "wayfarer",
+  "publishedAt": "2026-08-14T11:56:29.813Z",
+  "metadata": {
+    "slug": "wayfarer",
+    "title": "Wayfarer",
+    "tagline": "Narrative adventure game",
+    "summary": "A narrative adventure game set in the border Himalayan town...",
+    "category": "Game",
+    "status": "building",
+    "accentColor": "#A16207",
+    "featured": false,
+    "logo": "/images/projects/wayfarer/logo.png",
+    "primaryImage": "/images/projects/wayfarer/primary.png",
+    "secondaryImage": "/images/projects/wayfarer/secondary.png",
+    "overview": "A story-driven adventure game inspired by life in the Himalayan border town.. Players explore a remote mountain community, build relationships with its people and uncover stories hidden among the valleys.",
+    "why": "I wanted to create a game that captures the quiet beauty of mountain life and the emotions of living in a remote Himalayan town. It's also an opportunity for me to learn game design, storytelling and world building.",
+    "techStack": [
+      "Godot",
+      "GDScript",
+      "Blender",
+      "Asperite"
+    ],
+    "features": [
+      "Narrative-driven gameplay",
+      "Explorable mountain town",
+      "Meaningful NPC interactions",
+      "Atmospheric storytelling"
+    ],
+    "challenges": [],
+    "lessons": [
+      "Designing interactive narratives.",
+      "Building immersive environments.",
+      "Learning game architecture."
+    ],
+    "github": "https://github.com/psquare99/wayfarer",
+    "platform": "Android",
+    "framework": "Flutter",
+    "started": "September 2026",
+    "repository": "private",
+    "team": "Solo",
+    "roadmap": [
+      "Dialogue system",
+      "Quest system",
+      "Day & night cycle",
+      "Original soundtrack"
+    ],
+    "version": "v0.1.0"
+  },
+  "blocks": []
+}

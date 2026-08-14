@@ -20,12 +20,11 @@ export default function ProjectCard({
 
         {imageLeft && (
           <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-neutral-100">
-            <Image
-              src={project.primaryImage}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
+            <img
+  src={project.primaryImage}
+  alt={project.title}
+  className="h-full w-full object-cover"
+/>
           </div>
         )}
 
@@ -66,12 +65,11 @@ export default function ProjectCard({
 
         {!imageLeft && (
           <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-neutral-100">
-            <Image
-              src={project.primaryImage}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
+            <img
+  src={project.primaryImage}
+  alt={project.title}
+  className="h-full w-full object-cover"
+/>
           </div>
         )}
 

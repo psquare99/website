@@ -1,5 +1,11 @@
-import { projects } from "@/content/projects";
+import { getPublishedProjects } from "@/lib/publishing/published-projects";
+
+export function getProjects() {
+  return getPublishedProjects();
+}
 
 export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
+  return getProjects().find(
+    (project) => project.slug === slug
+  );
 }

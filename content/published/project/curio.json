@@ -3,7 +3,7 @@
   "id": "f860831f-a6b8-4a09-9f88-dca44bc96d4f",
   "contentType": "project",
   "slug": "curio",
-  "publishedAt": "2026-08-14T12:45:34.97+00:00",
+  "publishedAt": "2026-08-14T12:45:34.970Z",
   "metadata": {
     "slug": "curio",
     "title": "Curio",
@@ -30,9 +30,7 @@
       "Flexible organization",
       "Privacy-first local storage"
     ],
-    "challenges": [
-      "Implementing Timeshift"
-    ],
+    "challenges": [],
     "lessons": [
       "Exploring product philosophy before implementation.",
       "Designing a system around user intent rather than rigid organization.",

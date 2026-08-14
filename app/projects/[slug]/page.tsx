@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import ProjectBody from "@/components/projects/ProjectBody";
 import ProjectHeader from "@/components/projects/ProjectHeader";
-import { projects } from "@/content/projects";
+
+import {
+  getProject,
+} from "@/lib/projects";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -14,9 +17,11 @@ interface ProjectPageProps {
 export default async function ProjectPage({
   params,
 }: ProjectPageProps) {
-  const { slug } = await params;
+  const { slug } =
+    await params;
 
-  const project = projects.find((project) => project.slug === slug);
+  const project =
+    getProject(slug);
 
   if (!project) {
     notFound();
@@ -25,8 +30,13 @@ export default async function ProjectPage({
   return (
     <Container>
       <div className="pt-8 pb-16">
-        <ProjectHeader project={project} />
-        <ProjectBody project={project} />
+        <ProjectHeader
+          project={project}
+        />
+
+        <ProjectBody
+          project={project}
+        />
       </div>
     </Container>
   );

@@ -1,0 +1,53 @@
+{
+  "contractVersion": "0.1",
+  "id": "b1db939e-af85-4ce5-91bc-f510c2435fe5",
+  "contentType": "project",
+  "slug": "adi-kailash",
+  "publishedAt": "2026-08-14T12:30:40.058Z",
+  "metadata": {
+    "slug": "adi-kailash",
+    "title": "Adi Kailash Tourism",
+    "tagline": "Tour booking platform",
+    "summary": "A modern tourism platform that helps travelers discover Adi Kailash, explore tour packages and book their pilgrimage with confidence",
+    "category": "Website",
+    "status": "building",
+    "accentColor": "#16A34A",
+    "featured": false,
+    "logo": "/images/projects/adi-kailash/logo.png",
+    "primaryImage": "/images/projects/adi-kailash/primary.png",
+    "secondaryImage": "/images/projects/adi-kailash/secondary.png",
+    "overview": "A modern tourism website designed to help travelers discover Adi Kailash, explore tour packages andcomplete bookings through a simple and trustworthy experience.",
+    "why": "I wanted to build a real product that helps local tourism while learning how to design and develop a production-ready website with a strong focus on usability.",
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabane"
+    ],
+    "features": [
+      "Tour package browsing",
+      "Online booking",
+      "Destination information",
+      "Responsive design"
+    ],
+    "challenges": [],
+    "lessons": [
+      "Designing for real clients.",
+      "Building scalable UI components.",
+      "Planning production-ready architecture."
+    ],
+    "platform": "Web",
+    "framework": "Next.js",
+    "started": "August 2026",
+    "repository": "private",
+    "team": "Solo",
+    "roadmap": [
+      "Online payments",
+      "Admin dashboard",
+      "Customer reviews",
+      "Multi-language support"
+    ],
+    "version": "v0.1.0"
+  },
+  "blocks": []
+}
