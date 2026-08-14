@@ -48,6 +48,63 @@ function renderBlock(
       );
     }
 
+    case "heading": {
+      const data = block.data as {
+        text?: string;
+        level?: number;
+      };
+
+      const text = data.text ?? "";
+
+      return (
+        <h2
+          key={block.id}
+          className="text-3xl font-semibold tracking-tight text-[#2C2A28]"
+        >
+          {text}
+        </h2>
+      );
+    }
+
+    case "quote": {
+      const data = block.data as {
+        text?: string;
+      };
+
+      return (
+        <blockquote
+          key={block.id}
+          className="border-l-4 border-[#D8CEC1] pl-6 text-xl italic leading-8 text-[#5F564D]"
+        >
+          {data.text ?? ""}
+        </blockquote>
+      );
+    }
+
+    case "image": {
+      const data = block.data as {
+        src?: string;
+        alt?: string;
+      };
+
+      if (!data.src) {
+        return null;
+      }
+
+      return (
+        <figure
+          key={block.id}
+          className="overflow-hidden rounded-xl"
+        >
+          <img
+            src={data.src}
+            alt={data.alt ?? ""}
+            className="h-auto w-full"
+          />
+        </figure>
+      );
+    }
+
     default:
       return null;
   }
@@ -59,27 +116,42 @@ function renderBlocks(
   return blocks.map(renderBlock);
 }
 
+function getBlockText(
+  block: PublishedBlock
+): string {
+  if (
+    block.type !== "paragraph" &&
+    block.type !== "heading" &&
+    block.type !== "quote"
+  ) {
+    return "";
+  }
+
+  const data = block.data as {
+    text?: string;
+  };
+
+  return data.text ?? "";
+}
+
 function estimateReadingTime(
   blocks: PublishedBlock[]
 ): string {
   const words = blocks.reduce(
     (count, block) => {
-      if (block.type !== "paragraph") {
+      const text =
+        getBlockText(block);
+
+      if (!text) {
         return count;
       }
 
-      const data = block.data as {
-        text?: string;
-      };
-
       return (
         count +
-        (data.text
-          ? data.text
-              .trim()
-              .split(/\s+/)
-              .filter(Boolean).length
-          : 0)
+        text
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean).length
       );
     },
     0

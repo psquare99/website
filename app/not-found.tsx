@@ -1,43 +1,149 @@
+"use client";
+
+import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import Container from "@/components/Container";
 
+const WORKSHOP_CODE = "longwayhome";
+
 export default function NotFound() {
+  const router = useRouter();
+
+  const [code, setCode] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (code.trim().toLowerCase() === WORKSHOP_CODE) {
+      setMessage("The door opens. Welcome to the Workshop.");
+
+      setTimeout(() => {
+        router.push("/studio");
+      }, 700);
+
+      return;
+    }
+
+    setMessage(
+      "Nice try. The chimney smoke says otherwise."
+    );
+
+    setCode("");
+  }
+
   return (
     <Container>
       <main className="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center text-center">
-
         <h1 className="text-6xl font-semibold tracking-tight text-neutral-900">
-          Lost?
+          Well, you found it.
         </h1>
 
         <p className="mt-8 text-xl leading-9 text-neutral-600">
-          It looks like this path doesn't lead anywhere.
+          This is the Workshop.
         </p>
 
-        <div className="mt-12 space-y-5 text-lg leading-9 text-neutral-700">
-
+        <div className="mt-10 space-y-5 text-lg leading-9 text-neutral-700">
           <p>
-            That's okay.
+            It's just... not finished yet.
           </p>
 
           <p>
-            Some roads aren't meant to be followed.
+            Please don't touch anything.
+            <br />
+            There's probably a server running somewhere.
           </p>
 
           <p className="italic">
-            Maybe it's time to take the long way home.
+            But the door appears to be locked.
           </p>
-
         </div>
+
+        <form
+          onSubmit={handleSubmit}
+          className="mt-12 w-full max-w-sm"
+        >
+          <label
+            htmlFor="workshop-code"
+            className="mb-3 block text-sm font-medium uppercase tracking-widest text-neutral-500"
+          >
+            Enter the secret code
+          </label>
+
+          <div className="flex gap-2">
+            <input
+              id="workshop-code"
+              type="text"
+              value={code}
+              onChange={(event) => setCode(event.target.value)}
+              placeholder="••••••••••"
+              autoComplete="off"
+              className="
+                min-w-0
+                flex-1
+                rounded-full
+                border
+                border-neutral-300
+                bg-transparent
+                px-5
+                py-3
+                text-center
+                outline-none
+                transition-colors
+                focus:border-neutral-900
+              "
+            />
+
+            <button
+              type="submit"
+              className="
+                rounded-full
+                border
+                border-neutral-900
+                px-5
+                py-3
+                font-medium
+                transition-all
+                duration-200
+                hover:bg-neutral-900
+                hover:text-white
+              "
+            >
+              Enter
+            </button>
+          </div>
+
+          {message && (
+            <p
+              className="mt-4 text-sm italic text-neutral-500"
+              aria-live="polite"
+            >
+              {message}
+            </p>
+          )}
+        </form>
 
         <Link
           href="/"
-          className="mt-16 rounded-full border border-neutral-300 px-6 py-3 font-medium transition-all duration-200 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white"
+          className="
+            mt-12
+            rounded-full
+            border
+            border-neutral-300
+            px-6
+            py-3
+            font-medium
+            transition-all
+            duration-200
+            hover:border-neutral-900
+            hover:bg-neutral-900
+            hover:text-white
+          "
         >
-          ← Return Home
+          ← Pretend you never saw this
         </Link>
-
       </main>
     </Container>
   );

@@ -1,0 +1,58 @@
+{
+  "contractVersion": "0.1",
+  "id": "1730c28f-af35-46d8-a3b8-eb689ecba84b",
+  "contentType": "journal",
+  "slug": "block-system-test",
+  "publishedAt": "2026-08-13T16:43:32.585Z",
+  "metadata": {
+    "title": "Block system test",
+    "excerpt": "This test is to determine if all our block implementation system is working end to end or not",
+    "category": "dev-logs"
+  },
+  "blocks": [
+    {
+      "id": "83b173fe-7713-4955-8355-da26f2ff93c8",
+      "type": "paragraph",
+      "data": {
+        "text": "So lets begin with the paragraph block. Yeah it works. I can write as many lines of paragraph as i want and if i want to write another paragraph after this, i can easily insert it"
+      }
+    },
+    {
+      "id": "b927a5f1-0424-4b5e-9382-1b55e314a91a",
+      "type": "paragraph",
+      "data": {
+        "text": "Like this. see. Now lets move to the heading block"
+      }
+    },
+    {
+      "id": "1719e186-2d8f-4d76-94c3-7396fc4451d1",
+      "type": "heading",
+      "data": {
+        "text": "OK now time for big words. Awesome, it works, i am writing in a heading",
+        "level": 2
+      }
+    },
+    {
+      "id": "a7835bcc-b80e-4d2d-bed2-294939a0dac9",
+      "type": "image",
+      "data": {
+        "src": "<iframe src=\"https://assets.pinterest.com/ext/embed.html?id=231794712067178705\" height=\"445\" width=\"345\" frameborder=\"0\" scrolling=\"no\" ></iframe>",
+        "alt": "an image from pinterest, i don't know if external links work at the moment or now"
+      }
+    },
+    {
+      "id": "908684ff-df02-4094-9449-1341c34d131e",
+      "type": "quote",
+      "data": {
+        "text": "And now its time for a quote. So what do i put here. Let me try\nIts not over, until I say its over.\nRad, right?"
+      }
+    },
+    {
+      "id": "c5bb1ebd-d9d0-44d0-9232-94f0b8d94bf1",
+      "type": "paragraph",
+      "data": {
+        "text": "So all the blocks are tested. I have my doubts on the image block, because I don't know what kinda url Ardy wants me to put there and he hasn't told me anything. So. But everything else is awesome."
+      }
+    }
+  ]
+}
