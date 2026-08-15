@@ -4,7 +4,6 @@ import fs from "node:fs";
 import path from "node:path";
 
 import type { Project } from "@/types/project";
-
 import type { PublishedProjectDocument } from "./project-adapter";
 
 import {

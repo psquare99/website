@@ -40,16 +40,10 @@ export default function ProjectsPage() {
           {otherProjects.map(
             (project, index) => (
               <ProjectCard
-                key={
-                  project.slug
-                }
-                project={
-                  project
-                }
-                index={
-                  index
-                }
-              />
+  key={project.slug}
+  project={project}
+  index={index}
+/>
             )
           )}
         </section>
