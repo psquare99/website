@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { JournalEntry } from "@/types/journal";
+import JournalImage from "@/components/JournalImage";
 
 export interface PublishedDocumentMetadata {
   title: string;
@@ -92,16 +93,11 @@ function renderBlock(
       }
 
       return (
-        <figure
+        <JournalImage
           key={block.id}
-          className="overflow-hidden rounded-xl"
-        >
-          <img
-            src={data.src}
-            alt={data.alt ?? ""}
-            className="h-auto w-full"
-          />
-        </figure>
+          src={data.src}
+          alt={data.alt ?? ""}
+        />
       );
     }
 

@@ -46,33 +46,21 @@ body {
    -------------------------------------------------- */
 
 .journal-image {
-  width: 42%;
-  max-width: 420px;
-
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-
   break-inside: avoid;
-}
-
-.journal-image-right {
-  float: right;
-  clear: both;
-
-  margin-left: 2rem;
-}
-
-.journal-image-left {
-  float: left;
-  clear: both;
-
-  margin-right: 2rem;
 }
 
 .journal-image img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 75vh;
   height: auto;
+  border-radius: 0.9rem;
 }
 
 .journal-image figcaption {
@@ -83,6 +71,27 @@ body {
   line-height: 1.4;
 
   color: var(--muted);
+}
+
+/*
+ * Optional editorial float variants.
+ * The default image stays centered and naturally sized; these are
+ * available for future Studio alignment controls.
+ */
+.journal-image-right {
+  float: right;
+  clear: both;
+  width: 42%;
+  max-width: 420px;
+  margin-left: 2rem;
+}
+
+.journal-image-left {
+  float: left;
+  clear: both;
+  width: 42%;
+  max-width: 420px;
+  margin-right: 2rem;
 }
 
 /*
@@ -115,5 +124,11 @@ body {
 
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .journal-image img {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
   }
 }
