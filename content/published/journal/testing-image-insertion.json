@@ -1,0 +1,29 @@
+{
+  "contractVersion": "0.1",
+  "id": "896ac188-1658-4a32-bbe2-8ff8a6107fc7",
+  "contentType": "journal",
+  "slug": "testing-image-insertion",
+  "publishedAt": "2026-08-19T15:28:39.106Z",
+  "metadata": {
+    "title": "Testing image insertion",
+    "excerpt": "Test",
+    "category": "dev-logs"
+  },
+  "blocks": [
+    {
+      "id": "0ac9e1fc-98cd-46fd-9266-053f0a17c167",
+      "type": "paragraph",
+      "data": {
+        "text": "Checking if image insertion works here or not"
+      }
+    },
+    {
+      "id": "b8754671-2c36-4268-9e0d-fa1a0c0898e9",
+      "type": "image",
+      "data": {
+        "alt": "test image",
+        "src": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/88d670a6-b26d-4264-9ece-62ba7848ecc8.png"
+      }
+    }
+  ]
+}
