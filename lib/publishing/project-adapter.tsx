@@ -1,4 +1,4 @@
-import type { Project } from "@/types/project";
+import type { Project, ProjectBlock } from "@/types/project";
 
 export interface PublishedProjectDocument {
   contractVersion: "0.1";
@@ -13,7 +13,7 @@ export interface PublishedProjectDocument {
 
   metadata: Record<string, unknown>;
 
-  blocks: unknown[];
+  blocks: ProjectBlock[];
 }
 
 function getString(
@@ -263,6 +263,9 @@ const secondaryImage =
 
     version,
 
-    
+    blocks:
+      Array.isArray(document.blocks)
+        ? document.blocks
+        : [],
   };
 }

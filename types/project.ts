@@ -10,6 +10,12 @@ export type ProjectStatus =
   | "completed"
   
   | "archived";
+export interface ProjectBlock {
+  id: string;
+  type: "paragraph" | "heading" | "image" | "quote";
+  data: Record<string, unknown>;
+}
+
 export interface Project {
   slug: string;
 
@@ -55,5 +61,7 @@ accentColor: string;
 
 roadmap: string[];
 version: string;
+
+blocks: ProjectBlock[];
 
 }

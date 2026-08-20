@@ -1,5 +1,7 @@
 import type { Project } from "@/types/project";
 
+import ProjectContent from "./ProjectContent";
+
 import ProjectResources from "./ProjectResources";
 import ProjectSection from "./ProjectSection";
 import ProjectSidebar from "./ProjectSidebar";
@@ -16,6 +18,10 @@ export default function ProjectBody({
     <div className="grid items-start gap-16 lg:grid-cols-[3fr_2fr]">
       {/* LEFT COLUMN */}
       <article className="space-y-14">
+        {project.blocks.length > 0 ? (
+          <ProjectContent blocks={project.blocks} />
+        ) : (
+          <>
         <ProjectSection
           title="Overview"
           accentColor={project.accentColor}
@@ -77,6 +83,8 @@ export default function ProjectBody({
         </ProjectSection>
 
         <ProjectResources project={project} />
+          </>
+        )}
       </article>
 
       {/* RIGHT COLUMN */}
