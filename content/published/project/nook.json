@@ -11,7 +11,7 @@
     "summary": "Nook is a deliberately simple, private vault for the credentials and sensitive information you choose to keep close. It encrypts your vault before storing it on your device, requires no account or cloud service, and gives you control over your own backups.",
     "category": "App",
     "status": "building",
-    "accentColor": "#167A78",
+    "accentColor": "#FFA500",
     "featured": false,
     "logo": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/e5594daf-a801-4905-8e5b-1ac358a80b5b.png",
     "primaryImage": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/3d1b7bf6-e4f5-4596-a244-6e6c97d4466b.png",
@@ -73,11 +73,11 @@
   "blocks": [
     {
       "id": "c3d88a9f-007a-447e-a07e-773200a633de",
-      "type": "image",
       "data": {
-        "src": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/5adeba8e-3aea-44e6-b6b5-9e93bdf9cdf8.png",
-        "alt": ""
-      }
+        "alt": "",
+        "src": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/5adeba8e-3aea-44e6-b6b5-9e93bdf9cdf8.png"
+      },
+      "type": "image"
     }
   ]
 }
