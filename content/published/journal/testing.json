@@ -1,0 +1,44 @@
+{
+  "contractVersion": "0.1",
+  "id": "368dfc5d-72aa-4e41-8985-0a5db4558c25",
+  "contentType": "journal",
+  "slug": "testing",
+  "publishedAt": "2026-08-23T16:26:43.699Z",
+  "metadata": {
+    "title": "Testing",
+    "excerpt": "test journal",
+    "category": "test"
+  },
+  "blocks": [
+    {
+      "id": "a875aa7b-9c9c-4213-b5ea-cf21034bbb5d",
+      "type": "paragraph",
+      "data": {
+        "text": "this is a test journal to see if the new changes made in studio work or not"
+      }
+    },
+    {
+      "id": "8c97f039-1443-484f-ac68-2c549a56b4dd",
+      "type": "image",
+      "data": {
+        "src": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/325f8a41-097c-412f-80a5-34788e3f0082.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "id": "4069c3f7-50d7-4d16-a59b-48fb19babacc",
+      "type": "quote",
+      "data": {
+        "text": "the image upload works"
+      }
+    },
+    {
+      "id": "42092cee-c0d3-4039-822b-bb01f1e457bc",
+      "type": "heading",
+      "data": {
+        "text": "Also the big heading thing",
+        "level": 2
+      }
+    }
+  ]
+}
