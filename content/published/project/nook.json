@@ -16,6 +16,7 @@
     "logo": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/e5594daf-a801-4905-8e5b-1ac358a80b5b.png",
     "primaryImage": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/3d1b7bf6-e4f5-4596-a244-6e6c97d4466b.png",
     "secondaryImage": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/5adeba8e-3aea-44e6-b6b5-9e93bdf9cdf8.png",
+    "indexImage": "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/media/2026/96593e55-941c-4488-a78a-25de2379d9d7.jpg",
     "overview": "Nook is a deliberately simple, private vault for the credentials and sensitive information you choose to keep close. It encrypts your vault before storing it on your device, requires no account or cloud service, and gives you control over your own backups.",
     "why": "I wanted a password manager that felt like a small personal vault rather than another cloud service. Nook started as an experiment in building a genuinely useful offline-first Flutter application, but quickly became an exploration of local encryption, secure storage, lifecycle protection, and thoughtful privacy-focused UX.",
     "techStack": [
