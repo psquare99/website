@@ -156,7 +156,6 @@ const indexImage =
     !accentColor ||
     !logo ||
     !primaryImage ||
-    !secondaryImage ||
     !overview ||
     !why ||
     !version

@@ -14,8 +14,8 @@
     "accentColor": "#3B82F6",
     "featured": false,
     "logo": "/images/projects/example/logo.png",
-    "primaryImage": "images/projects/example/primary.png",
-    "secondaryImage": "images/projects/example/secondary.png",
+    "primaryImage": "/images/projects/example/primary.png",
+    "secondaryImage": "/images/projects/example/secondary.png",
     "overview": "Just to see if it works or not",
     "why": "Coz I Can",
     "techStack": [

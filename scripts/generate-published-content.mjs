@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import {
+  validateProjectDocument,
+  formatValidationErrors,
+} from "./lib/validate-project-document.mjs";
+
 const root = process.cwd();
 
 const journalDirectory = path.join(
@@ -32,24 +37,47 @@ function readPublishedDirectory(directory) {
         file
       );
 
-      return JSON.parse(
-        fs.readFileSync(
-          filePath,
-          "utf-8"
-        )
-      );
+      return {
+        file,
+        data: JSON.parse(
+          fs.readFileSync(
+            filePath,
+            "utf-8"
+          )
+        ),
+      };
     });
 }
 
 const journals =
   readPublishedDirectory(
     journalDirectory
+  ).map((entry) => entry.data);
+
+const projectEntries = readPublishedDirectory(projectDirectory);
+
+let hasValidationErrors = false;
+
+for (const entry of projectEntries) {
+  const result = validateProjectDocument(entry.data);
+
+  if (!result.ok) {
+    hasValidationErrors = true;
+
+    for (const message of formatValidationErrors(entry.data, entry.file, result.errors)) {
+      console.error(message);
+    }
+  }
+}
+
+if (hasValidationErrors) {
+  throw new Error(
+    "Published project validation failed. Fix the errors above and rebuild."
   );
+}
 
 const projects =
-  readPublishedDirectory(
-    projectDirectory
-  );
+  projectEntries.map((entry) => entry.data);
 
 if (projects.length === 0) {
   throw new Error(

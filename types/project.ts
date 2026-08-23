@@ -27,7 +27,7 @@ export interface Project {
   logo: string;
 
   primaryImage: string;
-  secondaryImage: string;
+  secondaryImage?: string;
   indexImage?: string;
 
   Category: ProjectCategory;
