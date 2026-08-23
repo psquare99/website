@@ -1,18 +1,4 @@
-import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-
-const mediaPublicUrl =
-  process.env.MEDIA_PUBLIC_URL;
-
-const mediaUrl =
-  mediaPublicUrl
-    ? new URL(mediaPublicUrl)
-    : undefined;
-
-const mediaProtocol =
-  mediaUrl?.protocol === "http:"
-    ? "http"
-    : "https";
 
 const nextConfig = {
   images: {
