@@ -3,9 +3,6 @@ import Image from "next/image";
 
 import type { Project } from "@/types/project";
 
-import ProjectStatusBadge from "./projects/ProjectStatusBadge";
-import ProjectTechStack from "./projects/ProjectTechStack";
-
 interface FeaturedProjectProps {
   project: Project;
 }
@@ -14,82 +11,54 @@ export default function FeaturedProject({
   project,
 }: FeaturedProjectProps) {
   return (
-    <section
-  className="rounded-[40px] border border-neutral-200 px-10 py-8 shadow-sm"
-  style={{
-    background:
-      "linear-gradient(to bottom, white, #f8fbff)",
-  }}
->
+    <article className="overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-5 shadow-sm sm:p-7 lg:p-8">
+      <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
+        {/* Content */}
+        <div className="flex h-full flex-col">
+          <div>
+            <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+              Building
+            </span>
 
-      <p className="mb-4 text-sm font-medium tracking-[0.15em] text-neutral-500">
-  ✨ This is where most of my time is going right now...
-</p>
+            <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-neutral-900 sm:text-5xl">
+              {project.title}
+            </h2>
 
-      <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+            <p className="mt-2 text-lg text-neutral-600 sm:text-xl">
+              {project.tagline}
+            </p>
 
-        {/* Left */}
+            <div className="mt-7 h-px w-10 bg-neutral-200" />
 
-        <div>
-
-          <Image
-            src={project.logo}
-            alt={project.title}
-            width={88}
-            height={88}
-            className="rounded-2xl"
-          />
-
-          <h2 className="mt-6 text-5xl font-bold tracking-tight">
-            {project.title}
-          </h2>
-
-          <p className="mt-3 text-2xl font-light text-neutral-600">
-            {project.tagline}
-          </p>
-<p className="mt-4 text-sm font-medium text-emerald-600">
-  Currently under active development
-</p>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-neutral-600">
-            {project.overview}
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <ProjectStatusBadge status={project.status} />
-            <ProjectTechStack techStack={project.techStack} />
+            <p className="mt-7 max-w-xl text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
+              {project.overview}
+            </p>
           </div>
 
           <Link
             href={`/projects/${project.slug}`}
-            className="group mt-10 inline-flex items-center gap-2 text-lg font-semibold transition-all"
+            className="group mt-8 inline-flex w-fit items-center gap-2 font-semibold text-blue-700 transition-colors hover:text-blue-900"
           >
-           <>
-  Explore Project
-
-  <span className="transition-transform duration-300 group-hover:translate-x-1">
-    →
-  </span>
-</>
+            Explore project
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
           </Link>
-
         </div>
 
-        {/* Right */}
-
-<div className="flex items-center justify-center">
-
-  <Image
-    src={project.primaryImage}
-    alt={project.title}
-    width={300}
-    height={600}
-    className="rounded-[28px] shadow-xl"
-  />
-
-</div>
-
+        {/* Image */}
+        <div className="relative overflow-hidden rounded-[22px] bg-neutral-100">
+          <div className="aspect-[16/10]">
+            <Image
+              src={project.primaryImage}
+              alt={project.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+            />
+          </div>
+        </div>
       </div>
-
-    </section>
+    </article>
   );
 }

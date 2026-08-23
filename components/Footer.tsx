@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="mt-8 border-t border-[var(--color-border)]">
       <Container>
-        <div className="py-12 text-center text-sm text-neutral-600">
+        <div className="py-8 text-center text-sm text-neutral-600">
   <p>© 2026 Prateek Pal</p>
 
   <p className="mt-2 italic">

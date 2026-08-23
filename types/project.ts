@@ -18,6 +18,7 @@ export interface ProjectBlock {
 
 export interface Project {
   slug: string;
+  publishedAt: string;
 
   title: string;
   tagline: string;
@@ -27,6 +28,7 @@ export interface Project {
 
   primaryImage: string;
   secondaryImage: string;
+  indexImage?: string;
 
   Category: ProjectCategory;
   status: ProjectStatus;

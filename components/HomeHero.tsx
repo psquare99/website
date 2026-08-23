@@ -7,14 +7,13 @@ import { heartbeats } from "@/content/home/heartbeats";
 
 export default function HomeHero() {
   return (
-    <section className="grid grid-cols-1 items-start gap-24 lg:grid-cols-[1.4fr_0.8fr]">
+    <section className="grid grid-cols-1 items-start gap-16 lg:grid-cols-[1.4fr_0.8fr] lg:gap-20">
       <div className="space-y-12">
-  <Hero hero={hero} />
+        <Hero hero={hero} />
+        <Reflection reflection={reflection} />
+      </div>
 
-  <Reflection reflection={reflection} />
-</div>
-
-      <div >
+      <div>
         <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-neutral-500">
           These days
         </h2>

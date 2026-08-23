@@ -7,7 +7,7 @@ import { reflection } from "@/content/home/reflection";
 export default function HomePage() {
   return (
     <Container>
-  <main className="py-20">
+  <main className="pt-12 pb-8">
     <HomeHero />
   </main>
 </Container>

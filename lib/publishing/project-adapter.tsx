@@ -124,6 +124,10 @@ const secondaryImage =
   normalizeImageUrl(
     getString(metadata, "secondaryImage")
   );
+const indexImage =
+  normalizeImageUrl(
+    getString(metadata, "indexImage")
+  );
 
   const overview =
     getString(
@@ -165,6 +169,8 @@ const secondaryImage =
   return {
     slug: document.slug,
 
+    publishedAt: document.publishedAt,
+
     title,
 
     tagline,
@@ -176,6 +182,8 @@ const secondaryImage =
     primaryImage,
 
     secondaryImage,
+
+    indexImage,
 
     Category:
       category as Project["Category"],

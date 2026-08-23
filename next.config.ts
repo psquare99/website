@@ -14,23 +14,15 @@ const mediaProtocol =
     ? "http"
     : "https";
 
-const nextConfig: NextConfig = {
-  images: mediaUrl
-    ? {
-        remotePatterns: [
-          {
-            protocol:
-              mediaProtocol,
-            hostname:
-              mediaUrl.hostname,
-            port:
-              mediaUrl.port,
-            pathname:
-              "/**",
-          },
-        ],
-      }
-    : undefined,
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "pub-afd5b578ae094d339252bb77b1349f57.r2.dev",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
