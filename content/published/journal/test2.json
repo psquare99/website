@@ -1,0 +1,21 @@
+{
+  "contractVersion": "0.1",
+  "id": "b0361669-5304-45d0-8660-fe732274f779",
+  "contentType": "journal",
+  "slug": "test2",
+  "publishedAt": "2026-08-24T14:22:34.698Z",
+  "metadata": {
+    "title": "test2",
+    "excerpt": "test2",
+    "category": "test"
+  },
+  "blocks": [
+    {
+      "id": "9a858d96-8f06-465f-ac2a-bd46ca3bd534",
+      "type": "paragraph",
+      "data": {
+        "text": "testing lifecycle\ntesting again"
+      }
+    }
+  ]
+}
