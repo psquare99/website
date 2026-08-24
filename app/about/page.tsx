@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import Container from "@/components/Container";
 import Image from "next/image";
 
@@ -7,6 +9,39 @@ const socials = {
   github: "",
   linkedin: "",
   twitter: "",
+};
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "A small corner of the internet that belongs entirely to me — not a portfolio built to impress anyone, just a quiet place to collect what I'm learning, building, and thinking.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About • The Long Way Home",
+    description:
+      "A small corner of the internet that belongs entirely to me — not a portfolio built to impress anyone.",
+    url: "https://thelongwayhome.dev/about",
+    siteName: "The Long Way Home",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "The Long Way Home",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About • The Long Way Home",
+    description:
+      "A small corner of the internet that belongs entirely to me.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function AboutPage() {
