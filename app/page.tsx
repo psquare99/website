@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "The Long Way Home",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "The Long Way Home",
     description:
       "Building thoughtful software, writing about books, mountains and ideas, and documenting the long way home.",
-    images: ["/opengraph-image"],
+    images: ["/opengraph-image.png"],
   },
 };
 
