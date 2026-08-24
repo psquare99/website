@@ -1,7 +1,42 @@
+import type { Metadata } from "next";
+
 import Container from "@/components/Container";
 import ProjectTimeline from "@/components/ProjectTimeline";
 
 import { getProjects } from "@/lib/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Things I'm making, slowly and on purpose — apps, websites, games, and experiments.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects • The Long Way Home",
+    description:
+      "Things I'm making, slowly and on purpose — apps, websites, games, and experiments.",
+    url: "https://thelongwayhome.dev/projects",
+    siteName: "The Long Way Home",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "The Long Way Home",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects • The Long Way Home",
+    description:
+      "Things I'm making, slowly and on purpose.",
+    images: ["/opengraph-image"],
+  },
+};
 
 export default function ProjectsPage() {
   const projects = getProjects();

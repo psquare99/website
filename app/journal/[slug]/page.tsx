@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+import type { Metadata } from "next";
+
 import { journal } from "@/content/journal";
 import { getPublishedJournal } from "@/lib/publishing/published-journal";
 import { formatDate } from "@/lib/formatDate";
@@ -12,6 +14,71 @@ interface JournalPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: JournalPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const publishedJournal = getPublishedJournal();
+
+  const allJournal = [
+    ...journal,
+    ...publishedJournal,
+  ];
+
+  const entry = allJournal.find(
+    (post) => post.slug === slug
+  );
+
+  if (!entry) {
+    return {
+      title: "Not Found",
+    };
+  }
+
+  return {
+    title: entry.title,
+    description: entry.excerpt,
+    alternates: {
+      canonical: `/journal/${slug}`,
+    },
+    openGraph: {
+      title: `${entry.title} • Journal`,
+      description: entry.excerpt,
+      url: `https://thelongwayhome.dev/journal/${slug}`,
+      siteName: "The Long Way Home",
+      locale: "en_US",
+      type: "article",
+      publishedTime: entry.published,
+      images: entry.image
+        ? [
+            {
+              url: entry.image.src,
+              width: 1600,
+              height: 900,
+              alt: entry.image.alt,
+            },
+          ]
+        : [
+            {
+              url: "/opengraph-image",
+              width: 1200,
+              height: 630,
+              alt: "The Long Way Home",
+            },
+          ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${entry.title} • Journal`,
+      description: entry.excerpt,
+      images: entry.image
+        ? [entry.image.src]
+        : ["/opengraph-image"],
+    },
+  };
 }
 
 export default async function JournalPage({

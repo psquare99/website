@@ -93,9 +93,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
 
-  alternates: {
-    canonical: "/",
-  },
+  
 };
 
 export const viewport: Viewport = {
