@@ -52,7 +52,7 @@ export async function generateMetadata({
       locale: "en_US",
       type: "article",
       publishedTime: entry.published,
-      images: entry.image
+images: entry.image
         ? [
             {
               url: entry.image.src,
@@ -63,21 +63,21 @@ export async function generateMetadata({
           ]
         : [
             {
-              url: "/opengraph-image",
+              url: "/opengraph-image.png",
               width: 1200,
               height: 630,
               alt: "The Long Way Home",
             },
           ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${entry.title} • Journal`,
-      description: entry.excerpt,
-      images: entry.image
-        ? [entry.image.src]
-        : ["/opengraph-image"],
-    },
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${entry.title} • Journal`,
+        description: entry.excerpt,
+        images: entry.image
+          ? [entry.image.src]
+          : ["/opengraph-image.png"],
+      },
   };
 }
 
