@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: "/admin/journal", label: "Journal" },
   { href: "/admin/projects", label: "Projects" },
   { href: "/admin/pages", label: "Pages" },
+  { href: "/admin/about", label: "About" },
   { href: "/admin/media", label: "Media" },
 ];
 

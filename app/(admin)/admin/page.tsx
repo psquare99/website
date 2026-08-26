@@ -31,6 +31,14 @@ export default function AdminDashboardPage() {
           <h2 className="mb-1 text-lg font-medium text-gray-900">Pages</h2>
           <p className="text-sm text-gray-500">Manage page entries</p>
         </Link>
+
+        <Link
+          href="/admin/about"
+          className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+        >
+          <h2 className="mb-1 text-lg font-medium text-gray-900">About</h2>
+          <p className="text-sm text-gray-500">Edit the about page</p>
+        </Link>
       </div>
     </>
   );
