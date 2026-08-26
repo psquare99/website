@@ -98,7 +98,12 @@ export async function POST(request: NextRequest) {
   // as long as: (a) images are rendered via <img src="..."> tags (which our
   // block-renderer.tsx does), and (b) SVGs are never served with text/html
   // Content-Type. If either assumption changes, this must be revisited.
-  const publicUrl = `https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/${storageKey}`;
+  const r2PublicBase = (env as CloudflareEnv).R2_PUBLIC_URL_BASE;
+  if (!r2PublicBase) {
+    console.error("R2_PUBLIC_URL_BASE is not configured");
+    return jsonError("Media storage is not properly configured", 500);
+  }
+  const publicUrl = `${r2PublicBase}/${storageKey}`;
   const now = new Date().toISOString();
 
   const asset: MediaAsset = {

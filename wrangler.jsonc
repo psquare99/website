@@ -41,6 +41,9 @@
       "bucket_name": "website-media"
     }
   ],
+  "vars": {
+    "R2_PUBLIC_URL_BASE": "https://pub-cf03fb0406654b30a8f4535e5e423f54.r2.dev"
+  },
   "observability": {
     "enabled": true
   }

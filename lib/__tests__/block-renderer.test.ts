@@ -89,7 +89,7 @@ describe("block-renderer", () => {
 
   it("renders image blocks with https URL", () => {
     const blocks: Block[] = [
-      { id: "1", type: "image", data: { src: "https://pub-afd5b578ae094d339252bb77b1349f57.r2.dev/uploads/abc.jpg", alt: "photo" } },
+      { id: "1", type: "image", data: { src: "https://pub-cf03fb0406654b30a8f4535e5e423f54.r2.dev/uploads/abc.jpg", alt: "photo" } },
     ];
     const result = renderBlocks(blocks);
     assert.ok(result[0] !== null);

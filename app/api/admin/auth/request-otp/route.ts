@@ -3,15 +3,14 @@ import {
   createOtpChallenge,
   verifyAdminSecret,
 } from "@/lib/auth";
+import { sendOtpEmail } from "@/lib/email";
 
 /**
  * POST /api/admin/auth/request-otp
  *
  * Validates the shared secret, generates a 6-digit OTP,
- * stores its hash in KV with a 10-minute TTL.
- *
- * OTP delivery: console-log only (no email provider wired yet).
- * Follow-up: wire Resend or equivalent in a later phase.
+ * stores its hash in KV with a 10-minute TTL, and sends
+ * the OTP to the configured admin email address.
  */
 export async function POST(request: NextRequest) {
   try {
@@ -37,11 +36,7 @@ export async function POST(request: NextRequest) {
     const { challengeId, otp } =
       await createOtpChallenge();
 
-    // OTP delivery: console-log for now.
-    // In production, this would be sent via email.
-    console.log(
-      `[AUTH] OTP for challenge ${challengeId}: ${otp}`
-    );
+    await sendOtpEmail(otp);
 
     return Response.json({
       success: true,

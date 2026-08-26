@@ -19,6 +19,14 @@ interface CloudflareEnv {
   // Shared secret for cron endpoint authentication
   CRON_SECRET: string;
 
+  // R2 public URL base (e.g. https://pub-xxx.r2.dev)
+  R2_PUBLIC_URL_BASE: string;
+
+  // Resend email configuration
+  RESEND_API_KEY?: string;
+  ADMIN_EMAIL?: string;
+  RESEND_FROM_EMAIL?: string;
+
   // Assets
   ASSETS: { fetch: typeof fetch };
 
