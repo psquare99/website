@@ -8,6 +8,7 @@ export interface PublishedDocumentMetadata {
   category?: string;
   location?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export interface PublishedBlock {
@@ -126,5 +127,11 @@ export function journalFromPublishedDocument(
       document.metadata.location,
 
     paper: "cream",
+
+    image:
+      typeof document.metadata.image === "string" &&
+      document.metadata.image
+        ? { src: document.metadata.image, alt: document.metadata.title }
+        : undefined,
   };
 }

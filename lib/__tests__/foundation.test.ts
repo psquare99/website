@@ -562,6 +562,44 @@ test("project contract uses top-level slug, not metadata.slug", () => {
   assert.equal(published.slug, "canonical-project-slug");
 });
 
+// --- Journal Metadata Image (Phase 11B regression) ---
+
+test("toPublishedJournalDocument passes metadata.image through contract", () => {
+  const doc = createTestDocument({
+    contentType: "journal",
+    metadata: {
+      title: "Test Entry",
+      image: "https://pub-cf03fb0406654b30a8f4535e5e423f54.r2.dev/media/2026/abc.jpg",
+    },
+  });
+
+  const published = toPublishedJournalDocument(doc);
+  assert.equal(
+    published.metadata.image,
+    "https://pub-cf03fb0406654b30a8f4535e5e423f54.r2.dev/media/2026/abc.jpg"
+  );
+});
+
+test("toPublishedJournalDocument omits metadata.image when absent", () => {
+  const doc = createTestDocument({
+    contentType: "journal",
+    metadata: { title: "Test Entry" },
+  });
+
+  const published = toPublishedJournalDocument(doc);
+  assert.equal(published.metadata.image, undefined);
+});
+
+test("toPublishedJournalDocument omits metadata.image for non-string value", () => {
+  const doc = createTestDocument({
+    contentType: "journal",
+    metadata: { title: "Test Entry", image: 42 as unknown as string },
+  });
+
+  const published = toPublishedJournalDocument(doc);
+  assert.equal(published.metadata.image, undefined);
+});
+
 // --- Category Tests ---
 
 test("category has correct shape", () => {

@@ -44,6 +44,7 @@ function toJournalMetadata(
     category: typeof metadata.category === "string" ? metadata.category : undefined,
     location: typeof metadata.location === "string" ? metadata.location : undefined,
     featured: typeof metadata.featured === "boolean" ? metadata.featured : undefined,
+    image: typeof metadata.image === "string" ? metadata.image : undefined,
   };
 }
 

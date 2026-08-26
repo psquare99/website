@@ -15,6 +15,7 @@ import ContentEditor from "./ContentEditor";
 import PublishControls from "./PublishControls";
 import PreviewPane from "./PreviewPane";
 import RevisionList from "./RevisionList";
+import DocumentActions from "@/app/(admin)/admin/documents/[id]/document-actions";
 
 export default function DocumentEditor({
   document: initialDocument,
@@ -178,6 +179,11 @@ export default function DocumentEditor({
             currentStatus={document.status}
             onRestore={refreshDocument}
           />
+        </div>
+
+        <div className="rounded-lg border border-gray-200 bg-white p-5">
+          <h2 className="mb-3 text-sm font-medium text-gray-900">Danger Zone</h2>
+          <DocumentActions document={document} />
         </div>
       </div>
     </div>
