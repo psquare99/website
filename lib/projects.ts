@@ -1,11 +1,9 @@
-import { getPublishedProjects } from "@/lib/publishing/published-projects";
+import { getPublishedProjects, getPublishedProject } from "@/lib/publishing/public-read";
 
-export function getProjects() {
+export async function getProjects() {
   return getPublishedProjects();
 }
 
-export function getProject(slug: string) {
-  return getProjects().find(
-    (project) => project.slug === slug
-  );
+export async function getProject(slug: string) {
+  return getPublishedProject(slug);
 }

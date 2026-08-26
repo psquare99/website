@@ -2,7 +2,7 @@
 
 Framework
 
-- Next.js
+- Next.js App Router
 
 Language
 
@@ -14,7 +14,7 @@ Styling
 
 Deployment
 
-- Vercel
+- Cloudflare Workers via OpenNext
 
 Repository
 

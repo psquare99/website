@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
-
 import type { JournalEntry } from "@/types/journal";
-import JournalImage from "@/components/JournalImage";
+import { renderBlocks, type Block } from "./block-renderer";
 
 export interface PublishedDocumentMetadata {
   title: string;
@@ -30,86 +29,7 @@ export interface PublishedDocument {
 
   metadata: PublishedDocumentMetadata;
 
-  blocks: PublishedBlock[];
-}
-
-function renderBlock(
-  block: PublishedBlock
-): ReactNode {
-  switch (block.type) {
-    case "paragraph": {
-      const data = block.data as {
-        text?: string;
-      };
-
-      return (
-        <p key={block.id}>
-          {data.text ?? ""}
-        </p>
-      );
-    }
-
-    case "heading": {
-      const data = block.data as {
-        text?: string;
-        level?: number;
-      };
-
-      const text = data.text ?? "";
-
-      return (
-        <h2
-          key={block.id}
-          className="text-3xl font-semibold tracking-tight text-[#2C2A28]"
-        >
-          {text}
-        </h2>
-      );
-    }
-
-    case "quote": {
-      const data = block.data as {
-        text?: string;
-      };
-
-      return (
-        <blockquote
-          key={block.id}
-          className="border-l-4 border-[#D8CEC1] pl-6 text-xl italic leading-8 text-[#5F564D]"
-        >
-          {data.text ?? ""}
-        </blockquote>
-      );
-    }
-
-    case "image": {
-      const data = block.data as {
-        src?: string;
-        alt?: string;
-      };
-
-      if (!data.src) {
-        return null;
-      }
-
-      return (
-        <JournalImage
-          key={block.id}
-          src={data.src}
-          alt={data.alt ?? ""}
-        />
-      );
-    }
-
-    default:
-      return null;
-  }
-}
-
-function renderBlocks(
-  blocks: PublishedBlock[]
-): ReactNode {
-  return blocks.map(renderBlock);
+  blocks: Block[];
 }
 
 function getBlockText(

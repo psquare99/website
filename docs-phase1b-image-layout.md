@@ -10,7 +10,7 @@ The published Journal image renderer now treats images as editorial content rath
 - Caps desktop image height at 75vh so very tall screenshots remain visually contained.
 - Lets mobile images use the full article width.
 - Keeps the existing float classes available for future editorial alignment controls.
-- Keeps image presentation separate from Studio's media/storage implementation.
+- Keeps image presentation separate from the media/storage implementation.
 
 ## Toolbox decision
 

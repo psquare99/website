@@ -78,7 +78,7 @@ body {
 /*
  * Optional editorial float variants.
  * The default image stays centered and naturally sized; these are
- * available for future Studio alignment controls.
+ * available for editorial alignment controls.
  */
 .journal-image-right {
   float: right;

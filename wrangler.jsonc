@@ -1,11 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
+  "main": "./custom-worker.ts",
   "name": "website",
   "compatibility_date": "2026-08-05",
   "compatibility_flags": [
     "nodejs_compat"
   ],
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -19,6 +22,25 @@
   "images": {
     "binding": "IMAGES"
   },
+  "d1_databases": [
+    {
+      "binding": "CONTENT_DB",
+      "database_name": "website-content",
+      "database_id": "c90c6108-f51e-4919-b76c-28228d69373d"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "AUTH_SESSIONS",
+      "id": "f08bca15215a44e7a2020621f0f60f81"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "website-media"
+    }
+  ],
   "observability": {
     "enabled": true
   }

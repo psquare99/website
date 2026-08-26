@@ -4,9 +4,6 @@ import { Source_Serif_4, Caveat } from "next/font/google";
 
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
 const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
@@ -125,13 +122,7 @@ export default function RootLayout({
     `}
   </Script>
 
-  <Navbar />
-
-  <main>
-    {children}
-  </main>
-
-  <Footer />
+  {children}
 </body>
     </html>
   );

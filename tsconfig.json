@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "server-only": ["./lib/__tests__/stubs/server-only.ts"]
     }
   },
   "include": [

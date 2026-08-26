@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import type { JournalDocument } from "./journal-content";
 
 export type JournalCategory = string;
 
@@ -43,6 +42,4 @@ export type JournalEntry = {
   location?: string;
 
   status: JournalStatus;
-
-  editorDocument?: JournalDocument;
 };

@@ -1,20 +1,4 @@
-import "server-only";
+// Re-exports D1-backed read functions for backward compatibility.
+// Existing pages import from this module — they now get D1-backed behavior.
 
-import type { Project } from "@/types/project";
-
-import {
-  publishedProjects,
-} from "./generated/published-content";
-
-import {
-  projectFromPublishedDocument,
-} from "./project-adapter";
-
-export function getPublishedProjects(): Project[] {
-  return publishedProjects.map(
-    (document) =>
-      projectFromPublishedDocument(
-        document
-      )
-  );
-}
+export { getPublishedProjects, getPublishedProject } from "./public-read";

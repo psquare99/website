@@ -1,20 +1,4 @@
-import "server-only";
+// Re-exports D1-backed read functions for backward compatibility.
+// Existing pages import from this module — they now get D1-backed behavior.
 
-import type { JournalEntry } from "@/types/journal";
-
-import {
-  publishedJournals,
-} from "./generated/published-content";
-
-import {
-  journalFromPublishedDocument,
-} from "./journal-adapter";
-
-export function getPublishedJournal(): JournalEntry[] {
-  return publishedJournals.map(
-    (document) =>
-      journalFromPublishedDocument(
-        document
-      )
-  );
-}
+export { getPublishedJournal, getPublishedJournalEntry } from "./public-read";
