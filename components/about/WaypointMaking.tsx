@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import WaypointComposition from "@/components/about/WaypointComposition";
 
 interface WaypointMakingProps {
   heading: string;
@@ -21,47 +20,44 @@ export default function WaypointMaking({
 }: WaypointMakingProps) {
   if (!heading && !text) return null;
 
-  const imageNode = image ? (
-    <div className="overflow-hidden rounded-2xl">
-      <Image
-        src={image}
-        alt={imageAlt || ""}
-        width={600}
-        height={400}
-        className="h-auto w-full object-cover"
-      />
-    </div>
-  ) : null;
+  return (
+    <div className="space-y-8">
+      <div className="space-y-6">
+        {heading && (
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900">
+            {heading}
+          </h2>
+        )}
 
-  const contentNode = (
-    <div className="space-y-6">
-      {heading && (
-        <h2 className="text-3xl font-semibold tracking-tight text-neutral-900">
-          {heading}
-        </h2>
-      )}
+        {text && (
+          <div className="space-y-5 text-lg leading-9 text-neutral-700">
+            {text.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+        )}
 
-      {text && (
-        <div className="space-y-5 text-lg leading-9 text-neutral-700">
-          {text.split("\n\n").map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
+        {linkLabel && linkUrl && (
+          <Link
+            href={linkUrl}
+            className="inline-block border-b border-neutral-300 pb-px text-sm font-medium text-neutral-900 transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+          >
+            {linkLabel} →
+          </Link>
+        )}
+      </div>
+
+      {image && (
+        <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-sm">
+          <Image
+            src={image}
+            alt={imageAlt || ""}
+            width={600}
+            height={400}
+            className="h-auto w-full max-w-[420px] object-cover"
+          />
         </div>
       )}
-
-      {linkLabel && linkUrl && (
-        <Link
-          href={linkUrl}
-          className="inline-block border-b border-neutral-300 pb-px text-sm font-medium text-neutral-900 transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-        >
-          {linkLabel} →
-        </Link>
-      )}
     </div>
-  );
-
-  // Workshop image on the left, text on the right.
-  return (
-    <WaypointComposition image={imageNode} content={contentNode} contentSide="right" />
   );
 }

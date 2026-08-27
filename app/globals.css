@@ -134,3 +134,24 @@ body {
     max-height: none;
   }
 }
+/* --------------------------------------------------
+   About page - mountain trail draw (decorative)
+   -------------------------------------------------- */
+
+@keyframes trail-draw {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.about-trail-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: trail-draw 1.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-trail-draw {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
