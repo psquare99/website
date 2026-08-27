@@ -1,0 +1,72 @@
+/* Phase 14 — Pinboard prototype styles.
+   Scroll-driven: each board is a sticky ~viewport "scene". The board rises in
+   as it enters the main position. Progressive enhancement — without
+   animation-timeline support the sticky stacking still works. */
+
+.pinboard-root {
+  width: 100%;
+  /* A slightly warmer, desaturated wall behind the boards. */
+  background-color: #ede9e0;
+  background-image:
+    radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.45), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(120, 110, 90, 0.045) 0 1px,
+      transparent 1px 11px
+    );
+}
+
+.pinboard-scene {
+  position: relative;
+  height: 150vh;
+}
+
+.pinboard-sheet {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.pinboard-board {
+  width: 100%;
+  max-width: 48rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Progressive enhancement: board rises and settles as it enters. */
+@supports (animation-timeline: view()) {
+  .pinboard-board {
+    animation: pinboard-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+  }
+}
+
+@keyframes pinboard-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(12vh) scale(0.97);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinboard-board {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
