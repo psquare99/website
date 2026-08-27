@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import WaypointComposition from "@/components/about/WaypointComposition";
 
 interface WaypointMakingProps {
   heading: string;
@@ -20,7 +21,19 @@ export default function WaypointMaking({
 }: WaypointMakingProps) {
   if (!heading && !text) return null;
 
-  return (
+  const imageNode = image ? (
+    <div className="overflow-hidden rounded-2xl">
+      <Image
+        src={image}
+        alt={imageAlt || ""}
+        width={600}
+        height={400}
+        className="h-auto w-full object-cover"
+      />
+    </div>
+  ) : null;
+
+  const contentNode = (
     <div className="space-y-6">
       {heading && (
         <h2 className="text-3xl font-semibold tracking-tight text-neutral-900">
@@ -44,18 +57,11 @@ export default function WaypointMaking({
           {linkLabel} →
         </Link>
       )}
-
-      {image && (
-        <div className="overflow-hidden rounded-2xl">
-          <Image
-            src={image}
-            alt={imageAlt || ""}
-            width={600}
-            height={400}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-      )}
     </div>
+  );
+
+  // Workshop image on the left, text on the right.
+  return (
+    <WaypointComposition image={imageNode} content={contentNode} contentSide="right" />
   );
 }

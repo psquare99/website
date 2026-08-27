@@ -1,3 +1,5 @@
+import WaypointComposition from "@/components/about/WaypointComposition";
+
 interface WaypointClosingProps {
   eyebrow: string;
   heading: string;
@@ -13,7 +15,7 @@ export default function WaypointClosing({
 }: WaypointClosingProps) {
   if (!eyebrow && !heading && !text && !signature) return null;
 
-  return (
+  const contentNode = (
     <div className="space-y-6 text-center">
       {eyebrow && (
         <span className="block font-sans text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
@@ -44,5 +46,11 @@ export default function WaypointClosing({
         </p>
       )}
     </div>
+  );
+
+  // Closing sits on the right of the final marker as a thoughtful terminus, with
+  // its text centred within the column. No image.
+  return (
+    <WaypointComposition content={contentNode} contentSide="right" />
   );
 }

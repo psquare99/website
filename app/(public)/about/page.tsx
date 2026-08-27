@@ -61,7 +61,7 @@ export default async function AboutPage() {
 
   return (
     <Container>
-      <main className="mx-auto max-w-5xl py-16 sm:py-24">
+      <main className="mx-auto max-w-[960px] py-16 sm:py-20">
         <WaypointTrail>
           <WaypointIntro
             eyebrow={about.intro.eyebrow}

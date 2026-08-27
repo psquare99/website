@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import WaypointComposition from "@/components/about/WaypointComposition";
 
 interface WaypointIntroProps {
   eyebrow: string;
@@ -20,7 +20,20 @@ export default function WaypointIntro({
 }: WaypointIntroProps) {
   const hasContent = eyebrow || heading || text || signature;
 
-  return (
+  const imageNode = image ? (
+    <div className="overflow-hidden rounded-2xl">
+      <Image
+        src={image}
+        alt={imageAlt || ""}
+        width={600}
+        height={750}
+        className="h-auto w-full object-cover"
+        priority
+      />
+    </div>
+  ) : null;
+
+  const contentNode = (
     <div className="space-y-8">
       {eyebrow && (
         <span className="block font-sans text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
@@ -51,22 +64,14 @@ export default function WaypointIntro({
         </p>
       )}
 
-      {image && (
-        <div className="overflow-hidden rounded-2xl">
-          <Image
-            src={image}
-            alt={imageAlt || ""}
-            width={600}
-            height={750}
-            className="h-auto w-full object-cover"
-            priority
-          />
-        </div>
-      )}
-
       {!hasContent && !image && (
         <p className="italic text-neutral-400">Introduction coming soon.</p>
       )}
     </div>
+  );
+
+  // Portrait on the left, text on the right.
+  return (
+    <WaypointComposition image={imageNode} content={contentNode} contentSide="right" />
   );
 }

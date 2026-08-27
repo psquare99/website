@@ -16,6 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import type { AboutWaypointNowItem } from "@/types/about";
+import WaypointComposition from "@/components/about/WaypointComposition";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   Laptop,
@@ -42,8 +43,8 @@ interface WaypointNowProps {
 export default function WaypointNow({ items }: WaypointNowProps) {
   if (!items || items.length === 0) return null;
 
-  return (
-    <div className="space-y-8">
+  const contentNode = (
+    <div className="space-y-4">
       {items.map((item, index) => {
         const Icon = ICON_MAP[item.icon];
         return (
@@ -70,5 +71,11 @@ export default function WaypointNow({ items }: WaypointNowProps) {
         );
       })}
     </div>
+  );
+
+  // A compact field-note/list on the left. No image in the data model, so the
+  // layout gracefully keeps text on its side without an empty placeholder.
+  return (
+    <WaypointComposition content={contentNode} contentSide="left" />
   );
 }
