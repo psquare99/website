@@ -32,32 +32,33 @@ export default function WaypointTrail({ children }: WaypointTrailProps) {
             >
               {/* Mobile marker — visible below sm */}
               <div className="flex justify-center sm:hidden" aria-hidden="true">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[var(--color-accent)] text-xs font-semibold text-white shadow-sm">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-[var(--color-accent)] text-xs font-semibold text-white">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              {/* Desktop: left content (even) or empty */}
-              <div className={`${isEven ? "sm:text-right" : "sm:order-3"} hidden sm:block`}>
+              {/* Desktop: left column — content for even waypoints (01, 03, 05), empty for odd */}
+              <div className={`hidden sm:block${isEven ? " sm:text-right" : ""}`}>
                 {isEven ? section : null}
               </div>
 
-              {/* Desktop: center marker */}
-              <div className="hidden items-start justify-center sm:flex sm:order-2" aria-hidden="true">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[var(--color-accent)] text-xs font-semibold text-white shadow-sm">
+              {/* Desktop: center marker — always on the vertical line */}
+              <div
+                className="relative z-10 hidden items-start justify-center sm:flex"
+                aria-hidden="true"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-[var(--color-accent)] text-xs font-semibold text-white">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              {/* Desktop: right content (odd) or empty */}
-              <div className={`${!isEven ? "" : "sm:order-3"} hidden sm:block`}>
+              {/* Desktop: right column — content for odd waypoints (02, 04, 06), empty for even */}
+              <div className="hidden sm:block">
                 {!isEven ? section : null}
               </div>
 
               {/* Mobile: full-width content */}
-              <div className="sm:hidden">
-                {section}
-              </div>
+              <div className="sm:hidden">{section}</div>
             </div>
           );
         })}
