@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import Container from "@/components/Container";
-import WorkshopWall from "@/components/about/WorkshopWall";
-
+import AboutPinboard from "@/components/about/prototypes/AboutPinboard";
 import { getAboutContent } from "@/lib/publishing/about-content";
+
+import "@/app/about-pinboard.css";
 
 export const dynamic = "force-dynamic";
 
@@ -45,19 +45,15 @@ export default async function AboutPage() {
 
   if (!about) {
     return (
-      <Container>
-        <main className="mx-auto max-w-3xl py-20 text-center">
-          <p className="italic text-neutral-400">About page coming soon.</p>
-        </main>
-      </Container>
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="italic text-neutral-400">About page coming soon.</p>
+      </div>
     );
   }
 
   return (
-    <Container>
-      <main className="mx-auto max-w-none py-0 sm:py-0">
-        <WorkshopWall about={about} />
-      </main>
-    </Container>
+    <div className="min-h-screen">
+      <AboutPinboard about={about} />
+    </div>
   );
 }
