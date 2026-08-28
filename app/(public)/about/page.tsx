@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import AboutPinboard from "@/components/about/AboutPinboard";
+import AboutWhiteboard from "@/components/about/AboutWhiteboard";
 import { getAboutContent } from "@/lib/publishing/about-content";
 
-import "@/app/about-pinboard.css";
+import "@/app/about-whiteboard.css";
 
 export const dynamic = "force-dynamic";
 
@@ -53,7 +53,7 @@ export default async function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      <AboutPinboard about={about} />
+      <AboutWhiteboard about={about} />
     </div>
   );
 }
