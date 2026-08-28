@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
-import AboutWhiteboard from "@/components/about/AboutWhiteboard";
+import Container from "@/components/Container";
+import AboutEditorial from "@/components/about/AboutEditorial";
 import { getAboutContent } from "@/lib/publishing/about-content";
-
-import "@/app/about-whiteboard.css";
 
 export const dynamic = "force-dynamic";
 
@@ -52,8 +51,10 @@ export default async function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen">
-      <AboutWhiteboard about={about} />
-    </div>
+    <Container>
+      <main className="mx-auto max-w-4xl py-12 sm:py-16 lg:py-20">
+        <AboutEditorial about={about} />
+      </main>
+    </Container>
   );
 }
