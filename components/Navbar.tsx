@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -33,7 +34,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-6 sm:gap-8">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
 
@@ -60,7 +61,70 @@ export default function Navbar() {
               );
             })}
 
+            <li>
+              <Link
+                href="/studio"
+                aria-label="The Workshop"
+                title="The Workshop"
+                className="
+                  group
+                  relative
+                  flex
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  overflow-visible
+                  rounded-full
+                  transition-transform
+                  duration-300
+                  hover:-translate-y-0.5
+                  focus:outline-none
+                "
+              >
+                <Image
+                  unoptimized
+                  src="/images/home/workshop-cabin-navbar.png"
+                  alt=""
+                  width={40}
+                  height={40}
+                  priority
+                  className="
+                    h-10
+                    w-10
+                    object-contain
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
+                />
 
+                <span
+                  className="
+                    pointer-events-none
+                    absolute
+                    right-0
+                    top-11
+                    whitespace-nowrap
+                    rounded-full
+                    bg-neutral-900
+                    px-2.5
+                    py-1
+                    text-[10px]
+                    font-medium
+                    text-white
+                    opacity-0
+                    shadow-sm
+                    transition-all
+                    duration-200
+                    group-hover:-translate-y-0.5
+                    group-hover:opacity-100
+                  "
+                >
+                  The Workshop
+                </span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </Container>

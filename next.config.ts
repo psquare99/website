@@ -2,6 +2,7 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -12,6 +13,15 @@ const nextConfig = {
         hostname: "media.thelongwayhome.dev",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/studio",
+        destination: "/admin",
+        permanent: false,
+      },
+    ];
   },
 };
 

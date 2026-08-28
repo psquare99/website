@@ -72,8 +72,8 @@ export default function Notebook({
   }, [selectedCategory, journal]);
 
   return (
-    <section>
-      <div className="flex flex-wrap gap-6">
+    <section className="py-10 sm:py-12 lg:py-16">
+      <div className="mb-10 flex flex-wrap gap-6 sm:mb-12">
         {categories.map((category) => (
           <button
             key={category.value}

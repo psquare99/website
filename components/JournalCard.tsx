@@ -31,6 +31,7 @@ export default function JournalCard({
         {entry.image && (
           <div className="relative aspect-[16/10] w-full overflow-hidden">
             <Image
+              unoptimized
               src={getOptimizedImageUrl(entry.image.src, { width: 800 })}
               alt={entry.image.alt}
               fill

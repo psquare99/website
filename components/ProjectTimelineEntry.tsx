@@ -69,6 +69,7 @@ export default function ProjectTimelineEntry({
         {/* Project image */}
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-100">
           <Image
+            unoptimized
             src={getOptimizedImageUrl(project.indexImage ?? project.primaryImage, { width: 900 })}
             alt={project.title}
             fill

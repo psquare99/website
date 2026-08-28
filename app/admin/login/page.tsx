@@ -109,7 +109,7 @@ export default function AdminLoginPage() {
         {step === "otp" && (
           <form onSubmit={handleOtpSubmit}>
             <p className="mb-4 text-sm text-gray-500">
-              Check your console for the verification code.
+              Check your email for the verification code.
             </p>
             <label className="mb-2 block text-sm text-gray-500">
               Verification Code
