@@ -52,7 +52,7 @@ export default async function AboutPage() {
 
   return (
     <Container>
-      <main className="mx-auto max-w-4xl py-12 sm:py-16 lg:py-20">
+      <main className="mx-auto max-w-4xl py-10 sm:py-12 lg:py-16">
         <AboutEditorial about={about} />
       </main>
     </Container>

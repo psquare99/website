@@ -48,11 +48,11 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
   const { intro, making, mountains, reading, now, closing } = about;
 
   return (
-    <div className="space-y-16 sm:space-y-24 lg:space-y-32">
+    <div className="space-y-12 sm:space-y-16 lg:space-y-24">
       {/* =========================================================================
           1. INTRO
           ========================================================================= */}
-      <section aria-labelledby="about-intro-heading" className="space-y-8 sm:space-y-10">
+      <section aria-labelledby="about-intro-heading" className="space-y-6 sm:space-y-8">
         <div className="space-y-3">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
             {intro.eyebrow || "ABOUT"}
@@ -65,7 +65,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div className="space-y-5 font-serif text-lg leading-relaxed text-neutral-700 sm:text-xl sm:leading-8">
             {intro.text ? (
               intro.text.split("\n\n").map((paragraph, index) => (
@@ -104,7 +104,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
       {/* =========================================================================
           2. MAKING
           ========================================================================= */}
-      <section aria-labelledby="about-making-heading" className="space-y-8 sm:space-y-10">
+      <section aria-labelledby="about-making-heading" className="space-y-6 sm:space-y-8">
         <div className="space-y-3">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
             01 / MAKING
@@ -119,7 +119,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
           )}
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
           <div className="space-y-5 font-serif text-base leading-relaxed text-neutral-700 sm:text-lg sm:leading-8">
             {making.text ? (
               making.text.split("\n\n").map((paragraph, index) => (
@@ -166,7 +166,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
       {/* =========================================================================
           3. THE MOUNTAINS
           ========================================================================= */}
-      <section aria-labelledby="about-mountains-heading" className="space-y-8 sm:space-y-10">
+      <section aria-labelledby="about-mountains-heading" className="space-y-6 sm:space-y-8">
         <div className="space-y-3">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
             02 / SOMEWHERE BETWEEN THE MOUNTAINS
@@ -181,7 +181,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
           )}
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
           {mountains.image && (
             <figure className="relative overflow-hidden rounded-xl border border-[var(--color-border)] bg-neutral-100 shadow-sm">
               <Image
@@ -218,7 +218,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
       {/* =========================================================================
           4. RIGHT NOW & READING
           ========================================================================= */}
-      <section aria-labelledby="about-now-heading" className="space-y-8 sm:space-y-10">
+      <section aria-labelledby="about-now-heading" className="space-y-6 sm:space-y-8">
         <div className="space-y-3">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
             03 / RIGHT NOW
@@ -231,7 +231,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Living Pulse List */}
           <div className="space-y-4">
             <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
@@ -315,7 +315,7 @@ export default function AboutEditorial({ about }: AboutEditorialProps) {
       {/* =========================================================================
           5. CLOSING
           ========================================================================= */}
-      <section aria-labelledby="about-closing-heading" className="space-y-6 py-6 text-center">
+      <section aria-labelledby="about-closing-heading" className="space-y-6 text-center">
         {closing.eyebrow && (
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
             {closing.eyebrow}
