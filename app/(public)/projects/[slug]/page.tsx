@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 
 import { getPublishedProject } from "@/lib/publishing/published-projects";
+import { getOptimizedImageUrl } from "@/lib/media/url";
 
 export const dynamic = "force-dynamic";
 
@@ -88,7 +89,7 @@ export default async function ProjectPage({
                 return (
                   <figure key={block.id} className="my-8">
                     <img
-                      src={(block.data as { src?: string }).src ?? ""}
+                      src={getOptimizedImageUrl((block.data as { src?: string }).src, { width: 1200 })}
                       alt={(block.data as { alt?: string }).alt ?? ""}
                       loading="lazy"
                       decoding="async"

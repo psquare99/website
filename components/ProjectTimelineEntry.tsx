@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import type { Project } from "@/types/project";
+import { getOptimizedImageUrl } from "@/lib/media/url";
 
 interface ProjectTimelineEntryProps {
   project: Project;
@@ -68,7 +69,7 @@ export default function ProjectTimelineEntry({
         {/* Project image */}
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-100">
           <Image
-            src={project.indexImage ?? project.primaryImage}
+            src={getOptimizedImageUrl(project.indexImage ?? project.primaryImage, { width: 900 })}
             alt={project.title}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { JournalEntry } from "@/types/journal";
 import { papers } from "@/lib/papers";
 import { formatDate } from "@/lib/formatDate";
+import { getOptimizedImageUrl } from "@/lib/media/url";
 
 interface JournalCardProps {
   entry: JournalEntry;
@@ -30,9 +31,10 @@ export default function JournalCard({
         {entry.image && (
           <div className="relative aspect-[16/10] w-full overflow-hidden">
             <Image
-              src={entry.image.src}
+              src={getOptimizedImageUrl(entry.image.src, { width: 800 })}
               alt={entry.image.alt}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>

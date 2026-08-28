@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { getOptimizedImageUrl } from "@/lib/media/url";
 
 /** Small sans-serif uppercase section label in the sage accent. */
 export function BoardEyebrow({ children }: { children: ReactNode }) {
@@ -37,7 +38,7 @@ export function BoardPhoto({
         style={{ transform: rotate ? `rotate(${rotate}deg)` : undefined, transformOrigin: "top center" }}
       >
         <Image
-          src={src}
+          src={getOptimizedImageUrl(src, { width: width * 2, quality: 85 })}
           alt={alt}
           width={width}
           height={height}

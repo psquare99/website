@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { getOptimizedImageUrl } from "@/lib/media/url";
 
 export interface Block {
   id: string;
@@ -29,9 +30,10 @@ function JournalImage({
   alt: string;
 }) {
   if (!isValidImageSrc(src)) return null;
+  const optimizedSrc = getOptimizedImageUrl(src, { width: 1200 });
   return (
     <figure className="journal-image">
-      <img src={src} alt={alt} loading="lazy" decoding="async" />
+      <img src={optimizedSrc} alt={alt} loading="lazy" decoding="async" />
     </figure>
   );
 }

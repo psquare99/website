@@ -42,7 +42,7 @@
     }
   ],
   "vars": {
-    "R2_PUBLIC_URL_BASE": "https://pub-cf03fb0406654b30a8f4535e5e423f54.r2.dev"
+    "R2_PUBLIC_URL_BASE": "https://media.thelongwayhome.dev"
   },
   "observability": {
     "enabled": true
