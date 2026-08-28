@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import AboutPinboard from "@/components/about/prototypes/AboutPinboard";
+import AboutPinboard from "@/components/about/AboutPinboard";
 import { getAboutContent } from "@/lib/publishing/about-content";
 
 import "@/app/about-pinboard.css";
